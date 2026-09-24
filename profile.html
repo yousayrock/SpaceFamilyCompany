@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=1440">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>所長について｜SpaceFamilyCompany</title>
 <meta name="description" content="未来ガジェット研究所 所長 吉岡佑正の紹介。">
 <meta property="og:title" content="所長について｜SpaceFamilyCompany">
@@ -11,66 +11,103 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 36'%3E%3Cpolygon points='13,1 1,18 13,18' fill='%23A9DDE2'/%3E%3Cpolygon points='13,1 25,18 13,18' fill='%23F0A9B9'/%3E%3Cpolygon points='1,18 13,35 13,18' fill='%23F0A9B9'/%3E%3Cpolygon points='25,18 13,35 13,18' fill='%23A9DDE2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&amp;family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-body{margin:0;background:#F7F5FB;color:#1C1A33;font-family:'M PLUS 1',sans-serif}
-a{color:#4A3F8F}a:hover{color:#2F2766}
+.prof-name{font-size:clamp(44px,4.5vw,64px);color:var(--ink)}
+.prof-kana{font-size:16px;color:var(--muted);line-height:1.7}
+.prof-photo{aspect-ratio:4/3}
+@media (min-width:960px){
+  .prof-text{grid-column:span 6}
+  .prof-photo{grid-column:8/span 5;aspect-ratio:auto;min-height:560px}
+}
+/* 見出し＋本文の行（狭い画面では見出しを上に） */
+.rows{border-top:1px solid var(--line)}
+.rows>div{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:28px 0;border-bottom:1px solid var(--line)}
+.rows .body{font-size:clamp(16px,1.2vw,17px);max-width:40em}
+@media (min-width:960px){
+  .rows>div{grid-template-columns:320px minmax(0,1fr);column-gap:40px;padding:36px 0}
+}
+/* できること */
+.skills{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:minmax(0,1fr);column-gap:40px;border-top:1.5px solid var(--ink)}
+.skills li{padding:16px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.7;color:var(--ink)}
+@media (min-width:720px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.motto{padding:clamp(32px,4.5vw,64px);gap:16px}
+.motto .eyebrow{color:var(--on-ink-muted);font-weight:400;letter-spacing:0;font-size:15px}
+.motto-line{font-family:var(--serif);font-weight:900;font-size:clamp(32px,3.4vw,48px);line-height:1.4}
+.cta-band .body{font-size:16px}
 </style>
-<style>html{scroll-behavior:smooth}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #F0A9B9;outline-offset:2px}</style>
 </head>
 <body>
-<div style="width: 1440px; min-height: 100vh; display: flex; flex-direction: column; background: #F7F5FB; color: #1C1A33; font-family: 'M PLUS 1', sans-serif">
-<header style="height: 88px; box-sizing: border-box; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; background: #232046">
-<a href="index.html" style="display: flex; align-items: center; gap: 14px; color: #F7F5FB; text-decoration: none"><svg width="24" height="34" viewBox="0 0 26 36" aria-hidden="true"><polygon points="13,1 1,18 13,18" fill="#A9DDE2"></polygon><polygon points="13,1 25,18 13,18" fill="#F0A9B9"></polygon><polygon points="1,18 13,35 13,18" fill="#F0A9B9"></polygon><polygon points="25,18 13,35 13,18" fill="#A9DDE2"></polygon></svg><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700">SpaceFamilyCompany</span><span style="font-size: 12px; color: #C9C4E6">未来ガジェット研究所</span></span></a>
-<nav aria-label="メインメニュー" style="display: flex; align-items: center; gap: 6px; font-size: 14px">
-<a href="index.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 16px; color: #F7F5FB; text-decoration: none">トップ</a>
-<a href="pricing.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 16px; color: #F7F5FB; text-decoration: none">料金</a>
-<a href="case-roadtalk.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 16px; color: #F7F5FB; text-decoration: none">導入事例</a>
-<a href="profile.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 16px; color: #1C1A33; background: #A9DDE2; border-radius: 999px; text-decoration: none; font-weight: 700" aria-current="page">所長について</a>
-<a href="index.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 22px; margin-left: 8px; background: #F0A9B9; color: #1C1A33; text-decoration: none; font-weight: 700; border-radius: 999px">LINEで相談</a>
+<a class="skip" href="#main">本文へ移動</a>
+<div class="page">
+<header class="site-header"><div class="wrap">
+<a class="brand" href="index.html"><svg class="gem" width="24" height="34" viewBox="0 0 26 36" aria-hidden="true"><polygon points="13,1 1,18 13,18" fill="#A9DDE2"/><polygon points="13,1 25,18 13,18" fill="#F0A9B9"/><polygon points="1,18 13,35 13,18" fill="#F0A9B9"/><polygon points="25,18 13,35 13,18" fill="#A9DDE2"/></svg><span><b>SpaceFamilyCompany</b><small>未来ガジェット研究所</small></span></a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">メニュー<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="2" y1="4" x2="14" y2="4"/><line x1="2" y1="8" x2="14" y2="8"/><line x1="2" y1="12" x2="14" y2="12"/></svg></button>
+<nav id="nav" class="nav" aria-label="メインメニュー">
+<a href="index.html">トップ</a><a href="pricing.html">料金</a><a href="case-roadtalk.html">導入事例</a><a href="profile.html" aria-current="page">所長について</a><a class="nav-cta" href="index.html#contact">LINEで相談</a>
 </nav>
-</header>
+</div></header>
+<main id="main">
 
-<section style="box-sizing: border-box; padding: 96px 64px 120px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 32px; align-items: center">
-<div style="grid-column: span 6; display: flex; flex-direction: column; gap: 24px">
-<a href="index.html" style="font-size: 14px; color: #5A5775; text-decoration: none">トップ ／ 所長について</a>
-<h1 style="margin: 0; font-family: 'Noto Serif JP', serif; font-weight: 900; font-size: 72px; line-height: 1.3; color: #232046; font-size: 64px">吉岡 佑正</h1>
-<span style="font-size: 16px; color: #5A5775">ヨシオカ ユウセイ ／ SpaceFamilyCompany 代表・未来ガジェット研究所 所長</span>
-<p style="margin: 0; font-size: 16px; line-height: 2; color: #3D3A57; font-size: 18px">地方には、ITがあれば楽になる仕事がたくさんあります。足りないのは技術ではなく、近くで相談できる人。その「近くの人」になるために、研究所を始めました。</p>
+<section class="sec sec--pad">
+<div class="wrap grid12 align-center">
+<div class="prof-text stack">
+<a class="crumb" href="index.html">トップ ／ 所長について</a>
+<h1 class="t-h1 prof-name">吉岡 佑正</h1>
+<span class="prof-kana">ヨシオカ ユウセイ ／ SpaceFamilyCompany 代表・未来ガジェット研究所 所長</span>
+<p class="lead">地方には、ITがあれば楽になる仕事がたくさんあります。足りないのは技術ではなく、近くで相談できる人。その「近くの人」になるために、研究所を始めました。</p>
 </div>
-<div style="grid-column: 8 / span 5; height: 560px; border-radius: 28px; background: #3B3470; color: #E6E2F5; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.8">[写真：所長とトム]</div>
-</section>
-<section style="box-sizing: border-box; padding: 0 64px 120px; display: flex; flex-direction: column; gap: 40px">
-<div style="border-top: 1.5px solid #232046; padding-top: 28px"><h2 style="margin: 0; font-family: 'Noto Serif JP', serif; font-size: 40px; font-weight: 900; line-height: 1.45; color: #232046">こんな人がつくっています</h2></div>
-<div style="border-top: 1px solid #D9D5E8"><div style="display: grid; grid-template-columns: 320px minmax(0, 1fr); column-gap: 40px; padding: 36px 0; border-bottom: 1px solid #D9D5E8"><h3 style="margin: 0; font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 900; color: #232046">旅をしながら、つくる</h3><p style="margin: 0; font-size: 16px; line-height: 2; color: #3D3A57; font-size: 17px">軽バンのN-VANに白猫のトムを乗せ、宮崎、長崎、大阪、千葉、新潟と拠点を移しながら暮らしています。トムの外遊びの様子はYouTubeで発信しています。</p></div>
-<div style="display: grid; grid-template-columns: 320px minmax(0, 1fr); column-gap: 40px; padding: 36px 0; border-bottom: 1px solid #D9D5E8"><h3 style="margin: 0; font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 900; color: #232046">現場で働く</h3><p style="margin: 0; font-size: 16px; line-height: 2; color: #3D3A57; font-size: 17px">倉庫、古民家の改修、ロボットの搬送。作業着で現場に立つ仕事もしています。紙と電話で回る仕事の大変さは、ここで知りました。</p></div>
-<div style="display: grid; grid-template-columns: 320px minmax(0, 1fr); column-gap: 40px; padding: 36px 0; border-bottom: 1px solid #D9D5E8"><h3 style="margin: 0; font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 900; color: #232046">自分で使ってから渡す</h3><p style="margin: 0; font-size: 16px; line-height: 2; color: #3D3A57; font-size: 17px">自分の困りごとを道具にし、毎日使って確かめてから外へ出す。この順番を崩さずに、17号機まで開発を重ねてきました。</p></div>
-<div style="display: grid; grid-template-columns: 320px minmax(0, 1fr); column-gap: 40px; padding: 36px 0; border-bottom: 1px solid #D9D5E8"><h3 style="margin: 0; font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 900; color: #232046">言葉で伝える</h3><p style="margin: 0; font-size: 16px; line-height: 2; color: #3D3A57; font-size: 17px">ITを社会のしくみにたとえて解説する本『社会で学ぶIT』を執筆しています。第1巻は『プログラムは会社である』。</p></div></div>
-</section>
-<section style="box-sizing: border-box; padding: 0 64px 120px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 32px">
-<div style="grid-column: span 4; border-top: 1.5px solid #232046; padding-top: 28px"><h2 style="margin: 0; font-family: 'Noto Serif JP', serif; font-size: 40px; font-weight: 900; line-height: 1.45; color: #232046">できること</h2></div>
-<ul style="grid-column: 6 / span 7; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; border-top: 1.5px solid #232046"><li style="padding: 16px 0; border-bottom: 1px solid #D9D5E8; font-size: 16px; color: #232046">スマホアプリ（Android・Flutter）</li><li style="padding: 16px 0; border-bottom: 1px solid #D9D5E8; font-size: 16px; color: #232046">Webアプリ（React・TypeScript）</li><li style="padding: 16px 0; border-bottom: 1px solid #D9D5E8; font-size: 16px; color: #232046">サーバー（Node.js・Python・PostgreSQL）</li><li style="padding: 16px 0; border-bottom: 1px solid #D9D5E8; font-size: 16px; color: #232046">チャットBot（Discord）</li><li style="padding: 16px 0; border-bottom: 1px solid #D9D5E8; font-size: 16px; color: #232046">AIの組み込み（Claude など）</li><li style="padding: 16px 0; border-bottom: 1px solid #D9D5E8; font-size: 16px; color: #232046">音声・配信（OBS・音声認識・読み上げ）</li><li style="padding: 16px 0; border-bottom: 1px solid #D9D5E8; font-size: 16px; color: #232046">車載端末・タブレットの改造</li><li style="padding: 16px 0; border-bottom: 1px solid #D9D5E8; font-size: 16px; color: #232046">業務の聞き取りと手順書づくり</li></ul>
-</section>
-<section style="box-sizing: border-box; padding: 0 64px 120px">
-<div style="background: #232046; color: #F7F5FB; border-radius: 28px; padding: 64px; display: flex; flex-direction: column; gap: 16px">
-<span style="font-size: 15px; color: #C9C4E6">研究所の決まりごと</span>
-<p style="margin: 0; font-family: 'Noto Serif JP', serif; font-size: 48px; font-weight: 900">神は細部に宿る。</p>
-<p style="margin: 0; font-size: 17px; line-height: 2; color: #D6D2EC">ボタンの位置、通知の一文、紙から移すときの手間。使われない道具は細部で負けています。</p>
+<div class="photo prof-photo" role="img" aria-label="所長と白猫のトムの写真（準備中）"><span>所長とトム</span><span class="photo-label">写真準備中</span></div>
 </div>
 </section>
-<section style="box-sizing: border-box; padding: 0 64px 120px">
-<div style="background: #EAE6F5; border-radius: 28px; padding: 56px 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 12px"><h2 style="margin: 0; font-family: 'Noto Serif JP', serif; font-size: 40px; font-weight: 900; line-height: 1.45; color: #232046; font-size: 34px">一度、話してみませんか。</h2><p style="margin: 0; font-size: 16px; line-height: 2; color: #3D3A57">相談と見積もりは無料です。当日～3日以内にお返事します。</p></div>
-<a href="index.html" style="flex-shrink: 0; display: inline-flex; align-items: center; height: 58px; padding: 0 32px; background: #232046; color: #F7F5FB; text-decoration: none; font-weight: 700; border-radius: 999px">LINEで相談する</a>
+
+<section class="sec">
+<div class="wrap stack" style="--gap:40px">
+<div class="sec-head"><h2 class="t-h2">こんな人がつくっています</h2></div>
+<div class="rows">
+<div><h3 class="t-h3 ink-text">旅をしながら、つくる</h3><p class="body">軽バンのN-VANに白猫のトムを乗せ、宮崎、長崎、大阪、千葉、新潟と拠点を移しながら暮らしています。トムの外遊びの様子はYouTubeで発信しています。</p></div>
+<div><h3 class="t-h3 ink-text">現場で働く</h3><p class="body">倉庫、古民家の改修、ロボットの搬送。作業着で現場に立つ仕事もしています。紙と電話で回る仕事の大変さは、ここで知りました。</p></div>
+<div><h3 class="t-h3 ink-text">自分で使ってから渡す</h3><p class="body">自分の困りごとを道具にし、毎日使って確かめてから外へ出す。この順番を崩さずに、17号機まで開発を重ねてきました。</p></div>
+<div><h3 class="t-h3 ink-text">言葉で伝える</h3><p class="body">ITを社会のしくみにたとえて解説する本『社会で学ぶIT』を執筆しています。第1巻は『プログラムは会社である』。</p></div>
+</div>
 </div>
 </section>
-<footer style="flex-grow: 1; box-sizing: border-box; padding: 56px 64px; background: #232046; color: #C9C4E6; display: flex; justify-content: space-between; align-items: flex-start; font-size: 14px">
-<div style="display: flex; align-items: center; gap: 16px"><svg width="26" height="36" viewBox="0 0 26 36" aria-hidden="true"><polygon points="13,1 1,18 13,18" fill="#A9DDE2"></polygon><polygon points="13,1 25,18 13,18" fill="#F0A9B9"></polygon><polygon points="1,18 13,35 13,18" fill="#F0A9B9"></polygon><polygon points="25,18 13,35 13,18" fill="#A9DDE2"></polygon></svg><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; color: #F7F5FB">SpaceFamilyCompany</span><span>未来ガジェット研究所</span></span></div>
-<nav aria-label="フッターメニュー" style="display: flex; gap: 28px">
-<a href="index.html" style="color: #C9C4E6; text-decoration: none">トップ</a><a href="pricing.html" style="color: #C9C4E6; text-decoration: none">料金とサービス</a><a href="case-roadtalk.html" style="color: #C9C4E6; text-decoration: none">導入事例</a><a href="profile.html" style="color: #C9C4E6; text-decoration: none">所長について</a><a href="privacy.html" style="color: #C9C4E6; text-decoration: none">プライバシーポリシー</a>
-</nav>
+
+<section class="sec">
+<div class="wrap grid12">
+<div class="span-4 sec-head"><h2 class="t-h2">できること</h2></div>
+<ul class="from-6 skills"><li>スマホアプリ（Android・Flutter）</li><li>Webアプリ（React・TypeScript）</li><li>サーバー（Node.js・Python・PostgreSQL）</li><li>チャットBot（Discord）</li><li>AIの組み込み（Claude など）</li><li>音声・配信（OBS・音声認識・読み上げ）</li><li>車載端末・タブレットの改造</li><li>業務の聞き取りと手順書づくり</li></ul>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+<div class="card card--ink motto">
+<span class="eyebrow">研究所の決まりごと</span>
+<p class="motto-line">神は細部に宿る。</p>
+<p class="body">ボタンの位置、通知の一文、紙から移すときの手間。使われない道具は細部で負けています。</p>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+<div class="cta-band card--lilac">
+<div class="stack" style="--gap:12px"><h2 class="t-h2">一度、話してみませんか。</h2><p class="body">相談と見積もりは無料です。当日～3日以内にお返事します。</p></div>
+<a class="btn btn--ink" href="index.html#contact">LINEで相談する</a>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="site-footer"><div class="wrap">
+<a class="brand" href="index.html"><svg class="gem" width="26" height="36" viewBox="0 0 26 36" aria-hidden="true"><polygon points="13,1 1,18 13,18" fill="#A9DDE2"/><polygon points="13,1 25,18 13,18" fill="#F0A9B9"/><polygon points="1,18 13,35 13,18" fill="#F0A9B9"/><polygon points="25,18 13,35 13,18" fill="#A9DDE2"/></svg><span><b>SpaceFamilyCompany</b><small>未来ガジェット研究所</small></span></a>
+<div class="foot-side">
+<nav class="foot-nav" aria-label="フッターメニュー"><a href="index.html">トップ</a><a href="pricing.html">料金とサービス</a><a href="case-roadtalk.html">導入事例</a><a href="profile.html">所長について</a><a href="privacy.html">プライバシーポリシー</a></nav>
 <span>© 2026 SpaceFamilyCompany</span>
-</footer>
 </div>
-
+</div></footer>
+</div>
+<script src="assets/site.js"></script>
 </body>
 </html>
