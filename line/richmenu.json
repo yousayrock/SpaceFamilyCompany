@@ -4,7 +4,7 @@
     "height": 1686
   },
   "selected": true,
-  "name": "main-2026-09-recruit",
+  "name": "main-2026-09-recruit-apply",
   "chatBarText": "メニュー",
   "areas": [
     {
@@ -28,9 +28,9 @@
         "height": 562
       },
       "action": {
-        "type": "uri",
+        "type": "message",
         "label": "研究員募集",
-        "uri": "https://yousayrock.github.io/SpaceFamilyCompany/recruit.html"
+        "text": "研究員に応募したいです"
       }
     },
     {
