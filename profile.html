@@ -12,30 +12,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&amp;family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
-<style>
-.prof-name{font-size:clamp(44px,4.5vw,64px);color:var(--ink)}
-.prof-kana{font-size:16px;color:var(--muted);line-height:1.7}
-.prof-photo{aspect-ratio:4/3}
-@media (min-width:960px){
-  .prof-text{grid-column:span 6}
-  .prof-photo{grid-column:8/span 5;aspect-ratio:auto;min-height:560px}
-}
-/* 見出し＋本文の行（狭い画面では見出しを上に） */
-.rows{border-top:1px solid var(--line)}
-.rows>div{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:28px 0;border-bottom:1px solid var(--line)}
-.rows .body{font-size:clamp(16px,1.2vw,17px);max-width:40em}
-@media (min-width:960px){
-  .rows>div{grid-template-columns:320px minmax(0,1fr);column-gap:40px;padding:36px 0}
-}
-/* できること */
-.skills{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:minmax(0,1fr);column-gap:40px;border-top:1.5px solid var(--ink)}
-.skills li{padding:16px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.7;color:var(--ink)}
-@media (min-width:720px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.motto{padding:clamp(32px,4.5vw,64px);gap:16px}
-.motto .eyebrow{color:var(--on-ink-muted);font-weight:400;letter-spacing:0;font-size:15px}
-.motto-line{font-family:var(--serif);font-weight:900;font-size:clamp(32px,3.4vw,48px);line-height:1.4}
-.cta-band .body{font-size:16px}
-</style>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>

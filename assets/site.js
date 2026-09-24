@@ -24,3 +24,15 @@
   document.body.appendChild(a);
   document.body.classList.add("has-line-float");
 })();
+
+// 相談フォーム：入力内容を書き込んだ状態でメールソフトを開く
+(function () {
+  var f = document.getElementById('contact-form');
+  if (!f) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = f.elements['name'].value, mail = f.elements['email'].value, msg = f.elements['message'].value;
+    var body = 'お名前：' + name + '\nメール：' + mail + '\n\n' + msg;
+    location.href = 'mailto:spacefamilycompany@gmail.com?subject=' + encodeURIComponent('【HPからのご相談】' + name) + '&body=' + encodeURIComponent(body);
+  });
+})();

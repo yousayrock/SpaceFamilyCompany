@@ -12,33 +12,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&amp;family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
-<style>
-.todo{background:#FFF3C4;color:#5A4A00;border-radius:4px;padding:0 4px}
-/* 狭い画面では12列の溝（32px×11）が幅を超えないよう1列にする */
-@media (max-width:959px){.grid12{grid-template-columns:minmax(0,1fr)}}
-.case-hero{padding-block:clamp(56px,7vw,104px) clamp(48px,5vw,72px)}
-.case-hero .t-h1{font-size:clamp(34px,4.4vw,64px);line-height:1.35}
-.case-no{font-size:16px;font-weight:700;color:var(--cyan)}
-.case-hero .facts{font-size:16px}
-.case-hero .facts dt,.case-hero .facts dd{padding:clamp(12px,1.3vw,18px) 0}
-.lead--lg{font-size:clamp(16px,1.3vw,18px)}
-.lead--md{font-size:clamp(16px,1.2vw,17px)}
-.made{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,3vw,40px);align-items:start}
-.made .card{padding:clamp(24px,2.6vw,36px);gap:12px;border-radius:24px}
-.made .photo{min-height:320px}
-.made .case-shot{min-height:0;aspect-ratio:4/3;background:#EEF1F6}
-.made .case-shot img{object-fit:contain}
-@media (min-width:960px){
-  .made{grid-template-columns:minmax(0,1fr) 360px}
-  .made .photo{min-height:520px}
-  .made .case-shot{min-height:0}
-}
-.band-cyan{background:var(--cyan)}
-.band-cyan>.grid12{flex:1 1 100%;row-gap:16px}
-.band-cyan .t-h2{font-size:clamp(26px,2.6vw,36px)}
-.band-cyan .lead{color:var(--cyan-text)}
-.cta-band .stack{flex:1 1 320px}
-</style>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -65,15 +38,17 @@
 </div>
 </section>
 
-<section class="sec--pad">
+<!-- TODO: お客様に確認してから公開
+<section class="sec—pad">
 <div class="wrap grid12">
 <div class="span-4 sec-head"><h2 class="t-h2">導入前の<br>困りごと</h2></div>
-<div class="from-6 stack" style="--gap:20px">
-<p class="lead lead--lg"><span class="todo">[お客様から聞いた困りごとを、具体的に書く。例：配車の連絡が電話と無線に分かれていて、誰に何を伝えたかが残らない。朝の連絡だけで事務所の手が塞がる。]</span></p>
+<div class="from-6 stack" style="—gap:20px">
+<p class="lead lead—lg"><span class="todo">[お客様から聞いた困りごとを、具体的に書く。例：配車の連絡が電話と無線に分かれていて、誰に何を伝えたかが残らない。朝の連絡だけで事務所の手が塞がる。]</span></p>
 <p class="note">※社名は伏せて掲載しています。</p>
 </div>
 </div>
 </section>
+-->
 
 <section class="sec">
 <div class="wrap stack" style="--gap:40px">
@@ -99,12 +74,14 @@
 </div>
 </section>
 
+<!-- TODO: お客様に確認してから公開
 <section class="sec">
 <div class="wrap grid12">
 <div class="span-4 sec-head"><h2 class="t-h2">変わったこと</h2></div>
-<p class="from-6 lead lead--lg"><span class="todo">[導入後に記入。例：朝の連絡にかかる時間、行き違いの回数、お客様の声]</span></p>
+<p class="from-6 lead lead—lg"><span class="todo">[導入後に記入。例：朝の連絡にかかる時間、行き違いの回数、お客様の声]</span></p>
 </div>
 </section>
+-->
 
 <section class="sec">
 <div class="wrap">
