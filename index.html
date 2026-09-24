@@ -17,87 +17,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&amp;family=M+PLUS+1:wght@400;500;700&amp;family=Klee+One:wght@600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
-<style>
-/* トップページだけで使う部品 */
-
-/* 強み：大きな紺のカード＋小さなカード */
-.strengths .card--ink{padding:0;overflow:hidden}
-.strengths .card--ink .photo{border-radius:0;min-height:clamp(220px,25vw,360px)}
-.strengths .card--ink .card-body{padding:clamp(28px,3.4vw,48px);display:flex;flex-direction:column;gap:18px}
-.strengths .card--ink .t-h3{font-size:clamp(26px,2.8vw,40px);line-height:1.4}
-.strengths .card--ink a{color:var(--cyan);font-weight:700}
-@media (min-width:960px){
-  .strengths .s-main{grid-column:span 7;grid-row:span 2}
-  .strengths .s-side{grid-column:span 5}
-  .strengths .s-half{grid-column:span 6}
-}
-@media (min-width:720px) and (max-width:959px){
-  .strengths .s-side,.strengths .s-half{grid-column:span 6}
-}
-
-/* 発明品の棚 */
-.shelf-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:start}
-.shelf{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.shelf button{min-height:64px;display:flex;align-items:center;gap:12px;padding:10px 16px;border:1.5px solid var(--line);border-radius:16px;background:var(--white);color:var(--ink);font:inherit;font-size:15px;font-weight:700;line-height:1.4;text-align:left;cursor:pointer;transition:border-color .15s ease,background-color .15s ease}
-.shelf button:hover{border-color:var(--ink)}
-.shelf button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-.shelf .no{font-size:13px;font-weight:500;opacity:.8;min-width:40px;font-variant-numeric:tabular-nums}
-.gadget{scroll-margin-top:16px;background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:clamp(28px,3.4vw,48px);display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
-.gadget-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
-.gadget-no{font-family:var(--serif);font-size:20px;color:var(--on-ink-muted);font-variant-numeric:tabular-nums}
-.gadget-name{margin:0;font-family:var(--serif);font-weight:900;font-size:clamp(34px,3.9vw,56px);line-height:1.25}
-.gadget-use{background:var(--ink-panel);border-radius:20px;padding:22px 26px;display:flex;flex-direction:column;gap:6px}
-.gadget-use b{font-size:14px;color:var(--cyan)}
-.gadget-use span{font-size:clamp(17px,1.4vw,19px);line-height:1.8;font-weight:500}
-.phone{width:210px;max-width:100%;aspect-ratio:210/430;border:8px solid #0F0D26;border-radius:36px;justify-self:center;align-self:center}
-@media (min-width:960px){
-  .shelf-wrap{grid-template-columns:5fr 7fr}
-  .gadget{grid-template-columns:minmax(0,1fr) 210px;column-gap:36px;min-height:600px}
-}
-@media (max-width:959px){
-  .phone{width:200px}
-}
-@media (max-width:420px){
-  .shelf button{font-size:14px;padding:8px 12px;gap:8px}
-  .shelf .no{min-width:34px}
-}
-
-.nw{display:inline-block}
-.submit{min-height:58px;flex-wrap:wrap;gap:0 4px;line-height:1.4;padding-block:8px}
-.submit small{font-size:13px;font-weight:500;opacity:.85}
-@media (max-width:420px){
-  .shelf button{flex-direction:column;align-items:flex-start;justify-content:center;gap:2px}
-}
-
-/* ジカロン */
-.zikaron{font-family:var(--serif);font-size:clamp(72px,8.4vw,120px);font-weight:500;line-height:1;color:var(--pink)}
-.zikaron-ja{font-family:var(--serif);font-size:clamp(20px,2vw,28px);font-weight:500;color:var(--on-ink-muted)}
-
-/* 頼めること */
-.menu-list{display:grid;grid-template-columns:minmax(0,1fr);column-gap:64px}
-.menu-item{align-content:start;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:24px;row-gap:8px;padding:28px 0;border-bottom:1px solid var(--line)}
-.menu-item h3{margin:0;font-size:clamp(19px,1.6vw,22px);font-weight:700;color:var(--ink);line-height:1.5}
-.menu-item .price{font-size:18px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
-.menu-item p{grid-column:1/-1}
-.menu-note{background:var(--lilac);border-radius:16px;padding:20px 24px}
-@media (min-width:860px){.menu-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-
-/* 依頼の流れ（実際に順番がある） */
-.flow{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
-.flow li{display:flex;flex-direction:column;gap:14px}
-.flow b{font-family:var(--serif);font-size:clamp(22px,1.9vw,26px);font-weight:700;color:var(--ink);line-height:1.4}
-@media (min-width:600px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1100px){.flow{grid-template-columns:repeat(4,minmax(0,1fr))}}
-
-/* 相談 */
-.line-card{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:clamp(28px,3.4vw,48px);display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:center}
-.line-card .qr{margin:0;width:150px;background:var(--white);border-radius:16px;padding:12px 12px 8px;display:flex;flex-direction:column;align-items:center;gap:4px}
-.line-card .qr img{width:126px;height:126px}
-.line-card .qr figcaption{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
-@media (min-width:600px){.line-card{grid-template-columns:minmax(0,1fr) 150px}}
-@media (max-width:599px){.line-card .qr{display:none}}
-.contact-title{font-size:clamp(32px,3.6vw,52px);line-height:1.4;color:var(--ink)}
-</style>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -115,7 +34,7 @@
 <div class="hero-art">
 <img src="assets/logo.jpg" width="1600" height="900" alt="SpaceFamilyCompany のロゴ。星雲を背景に、水色と桃色の菱形が輝いている">
 <p class="hero-copy">どこにいても<br>つくれる。<br>きっと、だれかの役に立つ。</p>
-<div class="photo hero-photo has-img"><img src="assets/img/hero-nvan.jpg" width="1400" height="933" alt="夕焼けの海辺に停まった白い軽バンと、そばに座る白キジ猫トムのイラスト" loading="lazy"><span class="tag-note">イラスト</span></div>
+<div class="photo hero-photo has-img"><img src="assets/img/hero-nvan.jpg" width="1400" height="933" alt="夕焼けの海辺に停まった白い軽バンと、そばに座る白キジ猫のトムのイラスト" loading="lazy"><span class="tag-note">イラスト</span></div>
 </div>
 </section>
 
@@ -135,18 +54,18 @@
 
 <!-- こんな団体に -->
 <section class="sec" id="for"><div class="wrap grid12">
-<div class="span-4 stack" style="--gap:20px;border-top:1.5px solid var(--ink);padding-top:28px;color:var(--ink)">
+<div class="span-4 stack rule-top" style="--gap:20px">
 <h2 class="t-h2">ひとつでも<br>当てはまったら。</h2>
 <p class="body">小さな団体の困りごとは、大きなシステムでは解決しません。いまのやり方に合わせて、ちょうどいい大きさの仕組みをつくります。</p>
 </div>
-<ul class="ticks from-6" style="border-top:1.5px solid var(--ink)">
-<li><svg class="gem" width="18" height="24" viewBox="0 0 18 24" aria-hidden="true"><polygon points="9,1 1,12 9,12" fill="#A9DDE2"/><polygon points="9,1 17,12 9,12" fill="#F0A9B9"/><polygon points="1,12 9,23 9,12" fill="#F0A9B9"/><polygon points="17,12 9,23 9,12" fill="#A9DDE2"/></svg><span>毎年の事業報告や行政への提出書類に、何週間も追われている</span></li>
-<li><svg class="gem" width="18" height="24" viewBox="0 0 18 24" aria-hidden="true"><polygon points="9,1 1,12 9,12" fill="#A9DDE2"/><polygon points="9,1 17,12 9,12" fill="#F0A9B9"/><polygon points="1,12 9,23 9,12" fill="#F0A9B9"/><polygon points="17,12 9,23 9,12" fill="#A9DDE2"/></svg><span>担当者が替わるたびに、やり方が消えてしまう</span></li>
-<li><svg class="gem" width="18" height="24" viewBox="0 0 18 24" aria-hidden="true"><polygon points="9,1 1,12 9,12" fill="#A9DDE2"/><polygon points="9,1 17,12 9,12" fill="#F0A9B9"/><polygon points="1,12 9,23 9,12" fill="#F0A9B9"/><polygon points="17,12 9,23 9,12" fill="#A9DDE2"/></svg><span>会員名簿、会費、イベントの記録がExcelと紙にバラバラ</span></li>
-<li><svg class="gem" width="18" height="24" viewBox="0 0 18 24" aria-hidden="true"><polygon points="9,1 1,12 9,12" fill="#A9DDE2"/><polygon points="9,1 17,12 9,12" fill="#F0A9B9"/><polygon points="1,12 9,23 9,12" fill="#F0A9B9"/><polygon points="17,12 9,23 9,12" fill="#A9DDE2"/></svg><span>ホームページや広報が、何年も更新できていない</span></li>
-<li><svg class="gem" width="18" height="24" viewBox="0 0 18 24" aria-hidden="true"><polygon points="9,1 1,12 9,12" fill="#A9DDE2"/><polygon points="9,1 17,12 9,12" fill="#F0A9B9"/><polygon points="1,12 9,23 9,12" fill="#F0A9B9"/><polygon points="17,12 9,23 9,12" fill="#A9DDE2"/></svg><span>AIを使ってみたいが、何から始めればいいかわからない</span></li>
-<li><svg class="gem" width="18" height="24" viewBox="0 0 18 24" aria-hidden="true"><polygon points="9,1 1,12 9,12" fill="#A9DDE2"/><polygon points="9,1 17,12 9,12" fill="#F0A9B9"/><polygon points="1,12 9,23 9,12" fill="#F0A9B9"/><polygon points="17,12 9,23 9,12" fill="#A9DDE2"/></svg><span>ひとりで営むお店や仕事で、電話や予約の受付に手を取られている</span></li>
-<li><svg class="gem" width="18" height="24" viewBox="0 0 18 24" aria-hidden="true"><polygon points="9,1 1,12 9,12" fill="#A9DDE2"/><polygon points="9,1 17,12 9,12" fill="#F0A9B9"/><polygon points="1,12 9,23 9,12" fill="#F0A9B9"/><polygon points="17,12 9,23 9,12" fill="#A9DDE2"/></svg><span>予算が限られていて、業者に頼むのをためらっている</span></li>
+<ul class="ticks ticks--rule from-6">
+<li><span>毎年の事業報告や行政への提出書類に、何週間も追われている</span></li>
+<li><span>担当者が替わるたびに、やり方が消えてしまう</span></li>
+<li><span>会員名簿、会費、イベントの記録がExcelと紙にバラバラ</span></li>
+<li><span>ホームページや広報が、何年も更新できていない</span></li>
+<li><span>AIを使ってみたいが、何から始めればいいかわからない</span></li>
+<li><span>ひとりで営むお店や仕事で、電話や予約の受付に手を取られている</span></li>
+<li><span>予算が限られていて、業者に頼むのをためらっている</span></li>
 </ul>
 </div></section>
 
@@ -158,7 +77,7 @@
 </div>
 <div class="cards">
 <article class="card card--ink s-main">
-<div class="photo has-img"><img src="assets/img/lab-nvan.jpg" width="1400" height="933" alt="軽バンのバックドアを開けてノートパソコンで開発する人と、隣で丸くなる白キジ猫トムのイラスト" loading="lazy"><span class="tag-note">イラスト</span></div>
+<div class="photo has-img"><img src="assets/img/lab-nvan.jpg" width="1400" height="933" alt="軽バンのバックドアを開けてノートパソコンで開発する人と、隣で丸くなる白キジ猫のトムのイラスト" loading="lazy"><span class="tag-note">イラスト</span></div>
 <div class="card-body">
 <h3 class="t-h3">日本中を走る、移動する研究所。</h3>
 <p class="body">所長は軽バンのN-VANに白キジ猫のトムを乗せ、宮崎、長崎、大阪、千葉、新潟と拠点を移しながら開発しています。「全国対応」は言葉だけではありません。オンラインで完結しつつ、旅の途中なら直接うかがうこともできます。</p>
@@ -171,7 +90,7 @@
 </article>
 <article class="card card--pink s-side">
 <h3 class="t-h3">自分で使い倒してから渡す</h3>
-<p class="body">まず自分の困りごとを解決し、毎日使って確かめてから外へ出す。この順番で、スマホアプリ、車載ディスプレイ、チャットBot、配信システムまで17号機まで開発を重ねてきました。</p>
+<p class="body">まず自分の困りごとを解決し、毎日使って確かめてから外へ出す。この順番で、スマホアプリ、車載ディスプレイ、チャットBot、配信システムまで、17号機の開発を重ねてきました。</p>
 </article>
 <article class="card card--white s-half">
 <h3 class="t-h3">専門用語を使わずに説明する</h3>
@@ -196,10 +115,10 @@
 <div class="stack" style="--gap:20px">
 <div class="gadget-top">
 <span class="gadget-no" data-g="no"></span>
-<span class="pill" data-g-pill data-g="status"></span>
+<span class="pill" data-g="status"></span>
 </div>
 <h3 class="gadget-name" data-g="name"></h3>
-<p class="lead" style="color:var(--on-ink)" data-g="desc"></p>
+<p class="lead" data-g="desc"></p>
 <div class="gadget-use">
 <b>あなたの団体なら</b>
 <span data-g="use"></span>
@@ -212,15 +131,11 @@
 <a class="btn btn--outline self-start" href="case-roadtalk.html">導入事例：RoadTalkを読む</a>
 </div></section>
 
-<!-- 研究所の考え方：ジカロン -->
+<!-- 作って終わりにしない -->
 <section class="sec--pad sec--ink" id="about"><div class="wrap grid12 align-center">
-<div class="span-5 stack" style="--gap:8px">
-<span class="zikaron" lang="he">זיכרון</span>
-<span class="zikaron-ja">ジカロン ＝ 記憶</span>
-</div>
+<h2 class="t-h1 about-title span-5"><span class="nw">作って、</span><br><span class="nw">終わりにしない。</span></h2>
 <div class="from-7 stack">
-<h2 class="t-h2">忘れない。<br>だから、つくり続けられる。</h2>
-<p class="lead">テクノロジーで、人の想いを未来につなぐ。そのために、作って渡して終わり、にはしません。なぜそう作ったか、どう設定したかを記録に残し、次の改善や別の道具につなげます。担当者が替わっても、仕組みと記録は団体に残ります。</p>
+<p class="lead">なぜそう作ったか、どう設定したかを引き継ぎ資料に残してお渡しします。担当者が替わっても、仕組みと記録は団体に残ります。次の改善も、その記録から始められます。</p>
 <p class="lead">ボタンの位置、通知の一文、紙から移すときの手間。使われない道具は細部で負けています。神は細部に宿る、が研究所の決まりごとです。</p>
 </div>
 </div></section>
@@ -246,18 +161,18 @@
 <!-- 依頼の流れ（実際に順番があるので番号を使う） -->
 <section class="sec" id="flow"><div class="wrap stack" style="--gap:48px">
 <div class="sec-head"><h2 class="t-h2">依頼の流れ</h2></div>
-<ol class="flow">
-<li><svg class="gem" width="36" height="50" viewBox="0 0 44 60" aria-hidden="true"><polygon points="22,2 2,30 22,30" fill="#A9DDE2"/><polygon points="22,2 42,30 22,30" fill="#F0A9B9"/><polygon points="2,30 22,58 22,30" fill="#F0A9B9"/><polygon points="42,30 22,58 22,30" fill="#A9DDE2"/></svg><b>1. 相談する</b><span class="body">LINEかフォームで、困りごとをそのまま。まとまっていなくて大丈夫です。</span></li>
-<li><svg class="gem" width="36" height="50" viewBox="0 0 44 60" aria-hidden="true"><polygon points="22,2 2,30 22,30" fill="#A9DDE2"/><polygon points="22,2 42,30 22,30" fill="#F0A9B9"/><polygon points="2,30 22,58 22,30" fill="#F0A9B9"/><polygon points="42,30 22,58 22,30" fill="#A9DDE2"/></svg><b>2. 見せてもらう</b><span class="body">ビデオ通話と画面共有で、いまの仕事の流れを見せてもらいます。近くなら訪問も。</span></li>
-<li><svg class="gem" width="36" height="50" viewBox="0 0 44 60" aria-hidden="true"><polygon points="22,2 2,30 22,30" fill="#A9DDE2"/><polygon points="22,2 42,30 22,30" fill="#F0A9B9"/><polygon points="2,30 22,58 22,30" fill="#F0A9B9"/><polygon points="42,30 22,58 22,30" fill="#A9DDE2"/></svg><b>3. 試作する</b><span class="body">まず動くものをお送りします。触ってもらった感想で細かいところを詰めます。</span></li>
-<li><svg class="gem" width="36" height="50" viewBox="0 0 44 60" aria-hidden="true"><polygon points="22,2 2,30 22,30" fill="#A9DDE2"/><polygon points="22,2 42,30 22,30" fill="#F0A9B9"/><polygon points="2,30 22,58 22,30" fill="#F0A9B9"/><polygon points="42,30 22,58 22,30" fill="#A9DDE2"/></svg><b>4. 納品して、記録する</b><span class="body">オンラインで設定まで済ませ、使い方と経緯を引き継ぎ資料に。その後の相談も同じ記録から始めます。</span></li>
+<ol class="flow flow--4 flow--gem">
+<li><b>1. 相談する</b><span class="body">LINEかフォームで、困りごとをそのまま。まとまっていなくて大丈夫です。</span></li>
+<li><b>2. 見せてもらう</b><span class="body">ビデオ通話と画面共有で、いまの仕事の流れを見せてもらいます。近くなら訪問も。</span></li>
+<li><b>3. 試作する</b><span class="body">まず動くものをお送りします。触ってもらった感想で細かいところを詰めます。</span></li>
+<li><b>4. 納品して、記録する</b><span class="body">オンラインで設定まで済ませ、使い方と経緯を引き継ぎ資料に。その後の相談も同じ記録から始めます。</span></li>
 </ol>
 </div></section>
 
 <!-- 研究員募集 -->
 <section class="sec" id="recruit"><div class="wrap">
 <div class="cta-band card--cyan">
-<div class="stack" style="--gap:12px"><span class="eyebrow" style="color:var(--cyan-text)">研究員募集</span><h2 class="t-h2">研究員、大募集。</h2><p class="body">地方の困りごとを、一緒に発明で片付けませんか。開発、デザイン、現場の知恵。オンライン中心で、全国どこからでも関われます。</p></div>
+<div class="stack" style="--gap:12px"><h2 class="t-h2">研究員、大募集。</h2><p class="body">地方の困りごとを、一緒に発明で片付けませんか。開発、デザイン、現場の知恵。オンライン中心で、全国どこからでも関われます。</p></div>
 <a class="btn btn--ink" href="recruit.html">募集のくわしい内容を見る</a>
 </div>
 </div></section>
@@ -280,18 +195,18 @@
 <div class="line-card">
 <div class="stack" style="--gap:18px">
 <h3 class="t-h3">LINEで相談する</h3>
-<p class="body" style="color:var(--on-ink)">友だち追加して、困りごとを一言送るだけ。写真やスクリーンショットもそのまま送れます。</p>
+<p class="body">友だち追加して、困りごとを一言送るだけ。写真やスクリーンショットもそのまま送れます。</p>
 <a class="btn btn--pink self-start" href="https://line.me/R/oaMessage/@699xcssc/?%E7%9B%B8%E8%AB%87%E3%81%97%E3%81%9F%E3%81%84%E3%81%A7%E3%81%99" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>友だち追加する</a>
 </div>
 <figure class="qr"><img src="assets/line-qr.svg" width="126" height="126" alt="LINE公式アカウント「スペファミ」の友だち追加QRコード"><figcaption>ID @699xcssc</figcaption></figure>
 </div>
 <form id="contact-form" class="form">
-<p class="note" style="font-weight:700">LINEを使わない方は、こちらから</p>
+<p class="note note--strong">LINEを使わない方は、こちらから</p>
 <label class="field" for="f-name">お名前<input id="f-name" type="text" name="name" required autocomplete="name" placeholder="山田 太郎"></label>
 <label class="field" for="f-email">メールアドレス<input id="f-email" type="email" name="email" required autocomplete="email"></label>
 <label class="field" for="f-message">困っていること<textarea id="f-message" name="message" required rows="6" placeholder="例：毎朝の配車の連絡を電話でしていて、1時間かかっている"></textarea></label>
 <button class="btn btn--ink btn--block submit" type="submit">相談を送る<small>（メールソフトが開きます）</small></button>
-<p class="note" style="text-align:center">送信すると、<a href="privacy.html">プライバシーポリシー</a>に同意したものとします。</p>
+<p class="note center">送信すると、<a href="privacy.html">プライバシーポリシー</a>に同意したものとします。</p>
 </form>
 </div>
 </div></section>
@@ -313,67 +228,6 @@
 </div>
 
 <script src="assets/site.js"></script>
-<script>
-(function () {
-  var done = '#A9DDE2', wip = '#F0A9B9';
-  var list = [
-{ id: '002', name: '家系Bot', status: '外部に納品済み', pill: done, desc: 'レシートを撮るか、金額を書くだけの家計簿Bot。AIが支出を分析し、Googleカレンダーとも連携します。', use: '会費や経費の記録を、チャットに書くだけにする。', tags: ['Discord', 'レシート読み取り', 'AI分析'] },
-{ id: '003', name: '創造局Bot', status: '仕上げ中', pill: wip, desc: '声を聞き取り、AIが考え、キャラクターの声で返す。ライブ配信の相棒です。', use: '窓口の案内係や電話の一次受付を、話せるAIキャラクターに任せる。', tags: ['音声認識', 'Claude', 'VOICEVOX', 'OBS'] },
-{ id: '004', name: 'Shorts自動投稿', status: '完成', pill: done, desc: '縦型動画のサイズ調整、タイトル付け、YouTubeへの投稿までを自動で行います。', use: '活動の様子を、撮るだけで動画で発信する。', tags: ['YouTube API', 'React'] },
-{ id: '005', name: '看板職人くん', status: '完成', pill: done, desc: 'お店のSNSや既存ページのURLから、AIが紹介ページを組み立てます。', use: '団体の紹介ページを、最短で公開する。', tags: ['Claude API', 'Streamlit'] },
-{ id: '006', name: 'サブモニターくん', status: '完成', pill: done, desc: '使っていないAndroidタブレットを、無線でパソコンの第二画面にします。2台同時にも対応。', use: '使っていない端末を、受付やイベント会場の表示板に再利用する。', tags: ['Android', 'Windows', 'ストリーミング'] },
-{ id: '007', name: 'アンドロナビくん', status: '開発中', pill: wip, desc: '市販の車載Androidナビに手を入れ、Linuxが動く小さなコンピュータに変えます。', use: '送迎車や巡回車のナビを、業務用の端末として活かす。', tags: ['Android', 'Linux'] },
-{ id: '008', name: 'HUDくん', status: '開発中', pill: wip, desc: '速度、地図、音声案内、通知をひとつの横長画面にまとめた車載アプリ。', use: '送迎・巡回のドライバーが見る専用画面を、車両に合わせてつくる。', tags: ['Kotlin', 'Google Maps', '音声案内'] },
-{ id: '009', name: 'AI秘書くん', status: '設計済み', pill: wip, desc: '独り言のように書き込むだけで、AIが整理して報告書にまとめます。', use: '活動の口頭報告を、そのまま事業報告の下書きにする。', tags: ['Discord', 'Claude'] },
-{ id: '010', name: '生きてる報告書', status: '開発中', pill: wip, desc: 'その日の記録から、色の移り変わりで気分まで伝わる日報をつくります。', use: '活動日誌を、読んでもらえる報告書に変える。', tags: ['HTML', 'AI分類'] },
-{ id: '011', name: 'RoadTalk', status: '運送会社で導入準備中', pill: wip, desc: 'ドライバーのタブレットと事務所をつなぐ音声・連絡システム。配車担当と管理者それぞれに専用の画面があります。', use: '送迎・配送・見守りの車両と事務所をつなぐ連絡網に。', tags: ['Kotlin', 'React', 'LiveKit', 'PostgreSQL'] },
-{ id: '012', name: 'Mia Rinos', status: '開発中', pill: wip, desc: 'オンラインゲーム『FF11』のAIパートナー。気持ちに合わせて16種類の表情で話します。', use: 'よくある質問への案内を、会話できるキャラクターに任せる。', tags: ['Flutter', 'AIキャラクター'] }
-];
-  var picked = '011';
-  var shelf = document.getElementById('shelf');
-  function field(k, v) { document.querySelectorAll('[data-g="' + k + '"]').forEach(function (el) { el.textContent = v; }); }
-  function render() {
-    shelf.innerHTML = '';
-    list.forEach(function (x) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('aria-pressed', x.id === picked ? 'true' : 'false');
-      b.innerHTML = '<span class="no"></span><span></span>';
-      b.children[0].textContent = x.id + '号';
-      b.children[1].textContent = x.name;
-      b.addEventListener('click', function () {
-        picked = x.id; render();
-        shelf.querySelector('[aria-pressed="true"]').focus();
-        if (window.innerWidth < 960) document.querySelector('.gadget').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-      shelf.appendChild(b);
-    });
-    var s = list.filter(function (x) { return x.id === picked; })[0] || list[0];
-    var shot = document.getElementById('g-shot');
-    if (shot) { shot.src = 'assets/img/gadget-' + s.id + '.jpg'; shot.alt = s.name + 'の画面イメージ'; }
-    field('no', s.id + '号機'); field('name', s.name); field('status', s.status); field('desc', s.desc); field('use', s.use);
-    document.querySelectorAll('[data-g-pill]').forEach(function (el) { el.style.background = s.pill; });
-    var tags = document.getElementById('g-tags');
-    tags.innerHTML = '';
-    s.tags.forEach(function (t) {
-      var sp = document.createElement('span');
-      sp.className = 'tag';
-      sp.textContent = t; tags.appendChild(sp);
-    });
-  }
-  render();
-})();
-
-(function () {
-  var f = document.getElementById('contact-form');
-  if (!f) return;
-  f.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = f.elements['name'].value, mail = f.elements['email'].value, msg = f.elements['message'].value;
-    var body = 'お名前：' + name + '\nメール：' + mail + '\n\n' + msg;
-    location.href = 'mailto:spacefamilycompany@gmail.com?subject=' + encodeURIComponent('【HPからのご相談】' + name) + '&body=' + encodeURIComponent(body);
-  });
-})();
-</script>
+<script src="assets/shelf.js"></script>
 </body>
 </html>

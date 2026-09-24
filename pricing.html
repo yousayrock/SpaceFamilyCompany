@@ -12,36 +12,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&amp;family=M+PLUS+1:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
-<style>
-.todo{background:#FFF3C4;color:#5A4A00;border-radius:4px;padding:0 4px}
-/* 狭い画面では12列の溝（32px×11）が幅を超えないよう1列にする */
-@media (max-width:959px){.grid12{grid-template-columns:minmax(0,1fr)}}
-.page-hero{padding-block:clamp(56px,7vw,104px) clamp(56px,6.5vw,96px)}
-.price{font-family:var(--serif);font-weight:900;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.4}
-/* サービス一覧：広い画面は3列、狭い画面は1列 */
-.svc-list{border-top:1px solid var(--line)}
-.svc{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;padding:clamp(28px,3vw,40px) 0;border-bottom:1px solid var(--line)}
-.svc-name{display:flex;flex-direction:column;gap:8px}
-.svc-name .t-h4{font-size:clamp(21px,1.8vw,24px)}
-.svc-name .price{font-size:clamp(28px,2.4vw,34px)}
-@media (min-width:960px){
-  .svc{grid-template-columns:minmax(260px,340px) minmax(0,1fr) minmax(200px,260px);column-gap:40px}
-  .svc-name{gap:12px}
-}
-/* 事例カード */
-.case-card{gap:16px}
-.case-card .who{font-size:15px;font-weight:700;color:var(--text)}
-.case-card .t-h3{font-size:clamp(20px,1.8vw,24px);line-height:1.6;color:var(--ink)}
-.case-card .body{line-height:1.9}
-.case-card .price{margin-top:auto;font-size:clamp(22px,2vw,28px)}
-/* よくある質問：広い画面は2列 */
-.faq-row{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:28px 0;border-bottom:1px solid var(--line)}
-.faq-row .t-h4{font-size:19px;line-height:1.7}
-@media (min-width:960px){
-  .faq-row{grid-template-columns:minmax(0,420px) minmax(0,1fr);column-gap:40px}
-}
-.cta-band .stack{flex:1 1 320px}
-</style>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -70,37 +40,37 @@
 <div class="sec-head"><h2 class="t-h2">サービスと目安の金額</h2></div>
 <div class="svc-list">
 <article class="svc">
-<div class="svc-name"><h3 class="t-h4">報告書と事務の仕組み化</h3><span class="price">10万円〜</span><span class="note"><span class="todo">[目安：1〜2か月]</span></span></div>
+<div class="svc-name"><h3 class="t-h4">報告書と事務の仕組み化</h3><span class="price">10万円〜</span><!-- TODO: [目安：1〜2か月] --></div>
 <p class="body">年次報告、会員名簿、会費、イベントの記録をひとつにまとめ、毎年の書類づくりを軽くします。</p>
 <ul class="dots"><li>いまの書類と作業の流れの聞き取り</li><li>記録の入れ物（表・アプリ）づくり</li><li>報告書の下書きが出る仕組み</li><li>使い方の手順書</li></ul>
 </article>
 <article class="svc">
-<div class="svc-name"><h3 class="t-h4">オリジナルアプリ開発</h3><span class="price">30万円〜</span><span class="note"><span class="todo">[目安：2〜4か月]</span></span></div>
+<div class="svc-name"><h3 class="t-h4">オリジナルアプリ開発</h3><span class="price">30万円〜</span><!-- TODO: [目安：2〜4か月] --></div>
 <p class="body">団体の活動に合わせた専用アプリ。送迎の連絡、見守り、受付、会員向けの案内など。</p>
 <ul class="dots"><li>画面の試作と打ち合わせ</li><li>アプリ本体の開発</li><li>端末への設定</li><li>引き継ぎ資料</li></ul>
 </article>
 <article class="svc">
-<div class="svc-name"><h3 class="t-h4">AI導入と職員向け勉強会</h3><span class="price">3万円〜</span><span class="note"><span class="todo">[目安：1〜2週間]</span></span></div>
+<div class="svc-name"><h3 class="t-h4">AI導入と職員向け勉強会</h3><span class="price">3万円〜</span><!-- TODO: [目安：1〜2週間] --></div>
 <p class="body">ChatGPTやClaudeの設定と、専門用語を使わない使い方講座。オンラインでも行います。</p>
 <ul class="dots"><li>アカウントと設定</li><li>団体の仕事に合わせた使い方の例</li><li>90分程度の勉強会</li><li>質問できる期間</li></ul>
 </article>
 <article class="svc">
-<div class="svc-name"><h3 class="t-h4">ホームページと広報</h3><span class="price">5万円〜</span><span class="note"><span class="todo">[目安：2〜4週間]</span></span></div>
+<div class="svc-name"><h3 class="t-h4">ホームページと広報</h3><span class="price">5万円〜</span><!-- TODO: [目安：2〜4週間] --></div>
 <p class="body">団体の紹介ページと、活動を動画で発信する仕組み。更新できる形でお渡しします。</p>
 <ul class="dots"><li>紹介ページの制作</li><li>写真と文章の整理</li><li>更新方法の説明</li></ul>
 </article>
 <article class="svc">
-<div class="svc-name"><h3 class="t-h4">パソコン・ネット環境</h3><span class="price">1万円〜</span><span class="note"><span class="todo">[目安：1日〜]</span></span></div>
+<div class="svc-name"><h3 class="t-h4">パソコン・ネット環境</h3><span class="price">1万円〜</span><!-- TODO: [目安：1日〜] --></div>
 <p class="body">パソコン、タブレット、Wi-Fi、会議の配信環境。まとめて引き受けます。</p>
 <ul class="dots"><li>機器の設定</li><li>トラブルの原因調べ</li><li>会議・配信の準備</li></ul>
 </article>
 <article class="svc">
-<div class="svc-name"><h3 class="t-h4">月額の相談窓口</h3><span class="price">月5,000円〜</span><span class="note"><span class="todo">[最低契約期間：要確認]</span></span></div>
+<div class="svc-name"><h3 class="t-h4">月額の相談窓口</h3><span class="price">月5,000円〜</span><!-- TODO: [最低契約期間：要確認] --></div>
 <p class="body">困ったらLINEでいつでも。操作の質問や小さな修正はこの範囲で対応します。</p>
 <ul class="dots"><li>LINEでの相談</li><li>小さな修正</li><li>つくった仕組みの見守り</li></ul>
 </article>
 </div>
-<p class="note">表示はすべて税込の目安です。<span class="todo">[税込・税抜の表記を確認]</span></p>
+<p class="note">表示は目安です。<!-- TODO: [税込・税抜の表記を確認] --></p>
 </div>
 </section>
 
@@ -138,8 +108,10 @@
 <div class="faq-row"><h3 class="t-h4">予算がほとんどありません。</h3><p class="body">まず予算を教えてください。お金をかけずに済む方法があれば、そちらから提案します。助成金・補助金の申請に添える見積書もお作りします。</p></div>
 <div class="faq-row"><h3 class="t-h4">遠くても頼めますか。</h3><p class="body">はい。相談から納品までオンラインで完結します。移動の途中で近くを通るときは、直接うかがうこともできます。</p></div>
 <div class="faq-row"><h3 class="t-h4">担当者が替わったらどうなりますか。</h3><p class="body">つくった理由と設定を引き継ぎ資料に残してお渡しします。新しい担当の方への説明も行います。</p></div>
-<div class="faq-row"><h3 class="t-h4">見積書や請求書は出せますか。</h3><p class="body">はい。見積書・請求書を発行します。<span class="todo">[インボイス登録番号：要記入／未登録の場合はその旨]</span></p></div>
-<div class="faq-row"><h3 class="t-h4">支払い方法は。</h3><p class="body"><span class="todo">[銀行振込など：要記入]</span>。<span class="todo">[支払いの時期：着手金の有無など要記入]</span></p></div>
+<div class="faq-row"><h3 class="t-h4">見積書や請求書は出せますか。</h3><p class="body">はい。見積書・請求書を発行します。<!-- TODO: [インボイス登録番号：要記入／未登録の場合はその旨] --></p></div>
+<!-- TODO: 支払い方法が決まったら戻す
+<div class="faq-row"><h3 class="t-h4">支払い方法は。</h3><p class="body"><!-- TODO: [銀行振込など：要記入] -->。<!-- TODO: [支払いの時期：着手金の有無など要記入] --></p></div>
+-->
 </div>
 </div>
 </section>

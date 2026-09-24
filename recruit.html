@@ -12,24 +12,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&amp;family=M+PLUS+1:wght@400;500;700&amp;family=Klee+One:wght@600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
-<style>
-.recruit-hero .t-display{color:var(--paper)}
-.recruit-hero .hand{font-family:var(--hand);font-weight:600;font-size:clamp(20px,2vw,26px);color:var(--pink);transform:rotate(-4deg);transform-origin:left;display:inline-block}
-.recruit-hero .lead{color:var(--on-ink)}
-.who{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
-.who li{display:flex;flex-direction:column;gap:10px}
-@media (min-width:720px){.who{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.flow{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
-.flow li{display:flex;flex-direction:column;gap:10px}
-.flow b{font-family:var(--serif);font-size:clamp(20px,1.8vw,24px);color:var(--ink);line-height:1.4}
-@media (min-width:860px){.flow{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.apply{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:center}
-.apply .qr{margin:0;width:150px;background:var(--white);border-radius:16px;padding:12px 12px 8px;display:flex;flex-direction:column;align-items:center;gap:4px}
-.apply .qr img{width:126px;height:126px}
-.apply .qr figcaption{font-size:12px;color:var(--muted)}
-@media (min-width:720px){.apply{grid-template-columns:minmax(0,1fr) 150px}}
-@media (max-width:719px){.apply .qr{display:none}}
-</style>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -60,7 +42,7 @@
 <section class="sec--pad">
 <div class="wrap stack" style="--gap:40px">
 <div class="sec-head"><h2 class="t-h2">こんな人を待っています</h2><p>ひとつでも当てはまれば、まずは話しましょう。</p></div>
-<ul class="who">
+<ul class="who-list">
 <li class="card card--white"><h3 class="t-h3">つくれる人</h3><p class="body">アプリやWeb、AIの組み込みなど、手を動かして開発できる人。</p></li>
 <li class="card card--white"><h3 class="t-h3">見せられる人</h3><p class="body">画面、チラシ、ロゴ、動画など、伝わる形にデザインできる人。</p></li>
 <li class="card card--cyan"><h3 class="t-h3">現場を知っている人</h3><p class="body">NPO、福祉、自治会、お店など、現場の仕事を知っている人。ITが苦手でもかまいません。</p></li>
@@ -84,7 +66,7 @@
 <section class="sec">
 <div class="wrap stack" style="--gap:40px">
 <div class="sec-head"><h2 class="t-h2">応募の流れ</h2></div>
-<ol class="flow">
+<ol class="flow flow--3 recruit-flow">
 <li><svg class="gem" width="30" height="42" viewBox="0 0 44 60" aria-hidden="true"><polygon points="22,2 2,30 22,30" fill="#A9DDE2"/><polygon points="22,2 42,30 22,30" fill="#F0A9B9"/><polygon points="2,30 22,58 22,30" fill="#F0A9B9"/><polygon points="42,30 22,58 22,30" fill="#A9DDE2"/></svg><b>1. LINEで一言</b><span class="body">「研究員に応募したいです」と送るだけ。AIのアシスタントが、できることと関わり方を3つだけ聞きます。</span></li>
 <li><svg class="gem" width="30" height="42" viewBox="0 0 44 60" aria-hidden="true"><polygon points="22,2 2,30 22,30" fill="#A9DDE2"/><polygon points="22,2 42,30 22,30" fill="#F0A9B9"/><polygon points="2,30 22,58 22,30" fill="#F0A9B9"/><polygon points="42,30 22,58 22,30" fill="#A9DDE2"/></svg><b>2. オンラインで話す</b><span class="body">所長から当日〜3日以内にお返事します。30分ほど、ビデオ通話でお話ししましょう。</span></li>
 <li><svg class="gem" width="30" height="42" viewBox="0 0 44 60" aria-hidden="true"><polygon points="22,2 2,30 22,30" fill="#A9DDE2"/><polygon points="22,2 42,30 22,30" fill="#F0A9B9"/><polygon points="2,30 22,58 22,30" fill="#F0A9B9"/><polygon points="42,30 22,58 22,30" fill="#A9DDE2"/></svg><b>3. 小さく一緒にやってみる</b><span class="body">いきなり大きな約束はしません。小さな案件を一緒にやって、お互いに合うか確かめます。</span></li>
@@ -96,8 +78,8 @@
 <div class="wrap">
 <div class="cta-band card--ink apply">
 <div class="stack" style="--gap:16px">
-<h2 class="t-h2" style="color:var(--paper)">まずはLINEで、一言どうぞ。</h2>
-<p class="body" style="color:var(--on-ink)">ボタンを押すと「研究員に応募したいです」と入った状態でトークが開きます。メール（spacefamilycompany@gmail.com）でも受け付けています。</p>
+<h2 class="t-h2">まずはLINEで、一言どうぞ。</h2>
+<p class="body">ボタンを押すと「研究員に応募したいです」と入った状態でトークが開きます。メール（spacefamilycompany@gmail.com）でも受け付けています。</p>
 <a class="btn btn--pink self-start" href="https://line.me/R/oaMessage/@699xcssc/?%E7%A0%94%E7%A9%B6%E5%93%A1%E3%81%AB%E5%BF%9C%E5%8B%9F%E3%81%97%E3%81%9F%E3%81%84%E3%81%A7%E3%81%99" target="_blank" rel="noopener">LINEで応募する</a>
 </div>
 <figure class="qr"><img src="assets/line-qr.svg" width="126" height="126" alt="LINE公式アカウント「スペファミ」の友だち追加QRコード"><figcaption>ID @699xcssc</figcaption></figure>
