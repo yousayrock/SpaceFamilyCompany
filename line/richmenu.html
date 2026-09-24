@@ -15,13 +15,20 @@ body{font-family:'M PLUS 1',sans-serif;color:var(--paper)}
 .menu{display:grid;grid-template-columns:1000px 750px 750px;grid-template-rows:843px 843px;width:2500px;height:1686px}
 
 /* 左：相談（主役） */
-.consult{grid-row:1/3;background:var(--pink);color:var(--ink-deep);position:relative;overflow:hidden;padding:120px 96px 110px;display:flex;flex-direction:column;justify-content:space-between}
-.consult::after{content:"";position:absolute;right:-150px;bottom:-120px;width:520px;height:720px;opacity:.28;
+.left{grid-row:1/3;display:flex;flex-direction:column}
+.consult{height:1124px;background:var(--pink);color:var(--ink-deep);position:relative;overflow:hidden;padding:84px 96px 80px;display:flex;flex-direction:column;justify-content:space-between}
+.recruit{height:562px;background:var(--cyan);color:var(--ink-deep);border-top:6px solid var(--ink);padding:70px 96px;display:flex;flex-direction:column;justify-content:center;gap:20px;position:relative;overflow:hidden}
+.recruit .tag{align-self:flex-start;background:var(--ink);color:var(--cyan);font-size:48px;font-weight:700;border-radius:999px;padding:10px 34px;letter-spacing:.06em}
+.recruit b{font-family:'Noto Serif JP',serif;font-weight:900;font-size:132px;line-height:1.1;white-space:nowrap}
+.recruit small{font-size:54px;font-weight:700;color:#24474C;white-space:nowrap}
+.recruit .arrow{border-color:var(--ink);top:70px}
+.recruit .arrow svg path{stroke:var(--ink)}
+.consult::after{content:"";position:absolute;right:-170px;bottom:-200px;width:460px;height:640px;opacity:.28;
   background:conic-gradient(from 0deg at 50% 50%,var(--paper) 0 90deg,var(--cyan) 90deg 180deg,var(--paper) 180deg 270deg,var(--cyan) 270deg 360deg);
   clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
 .consult .eyebrow{font-size:56px;font-weight:700;letter-spacing:.08em;color:#6B2E3E}
-.consult h1{font-family:'Noto Serif JP',serif;font-weight:900;font-size:170px;line-height:1.28;letter-spacing:.02em}
-.consult p{white-space:nowrap;font-size:64px;font-weight:700;line-height:1.55;position:relative;z-index:1}
+.consult h1{font-family:'Noto Serif JP',serif;font-weight:900;font-size:150px;line-height:1.25;letter-spacing:.02em}
+.consult p{white-space:nowrap;font-size:58px;font-weight:700;line-height:1.55;position:relative;z-index:1}
 .chip{display:inline-flex;align-items:center;gap:26px;background:var(--ink);color:var(--paper);border-radius:999px;padding:30px 60px;font-size:62px;font-weight:700;align-self:flex-start;position:relative;z-index:1}
 
 /* 右：4マス */
@@ -39,6 +46,7 @@ body{font-family:'M PLUS 1',sans-serif;color:var(--paper)}
 <body>
 <div class="menu">
 
+<div class="left">
 <div class="consult">
 <span class="eyebrow">未来ガジェット研究所</span>
 <div>
@@ -46,6 +54,13 @@ body{font-family:'M PLUS 1',sans-serif;color:var(--paper)}
 </div>
 <p>困りごとを一言どうぞ。<br>相談・見積もりは無料。</p>
 <span class="chip"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>ここを押して送信</span>
+</div>
+<div class="recruit">
+<span class="tag">研究員募集</span>
+<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+<b>大募集！</b>
+<small>一緒に発明しませんか</small>
+</div>
 </div>
 
 <div class="tile">
