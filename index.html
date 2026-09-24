@@ -55,7 +55,7 @@
   .gadget{grid-template-columns:minmax(0,1fr) 210px;column-gap:36px;min-height:600px}
 }
 @media (max-width:959px){
-  .phone{display:none}
+  .phone{width:200px}
 }
 @media (max-width:420px){
   .shelf button{font-size:14px;padding:8px 12px;gap:8px}
@@ -109,13 +109,13 @@
 <a class="brand" href="index.html"><svg class="gem" width="22" height="30" viewBox="0 0 26 36" aria-hidden="true"><polygon points="13,1 1,18 13,18" fill="#A9DDE2"/><polygon points="13,1 25,18 13,18" fill="#F0A9B9"/><polygon points="1,18 13,35 13,18" fill="#F0A9B9"/><polygon points="25,18 13,35 13,18" fill="#A9DDE2"/></svg><span><b>SpaceFamilyCompany</b><small>未来ガジェット研究所</small></span></a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">メニュー<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="2" y1="4" x2="14" y2="4"/><line x1="2" y1="8" x2="14" y2="8"/><line x1="2" y1="12" x2="14" y2="12"/></svg></button>
 <nav id="nav" class="nav" aria-label="メインメニュー">
-<a href="#strengths">強み</a><a href="#works">発明品</a><a href="pricing.html">料金</a><a href="case-roadtalk.html">導入事例</a><a href="profile.html">所長について</a><a class="nav-cta" href="#contact">LINEで相談</a>
+<a href="#strengths">強み</a><a href="#works">発明品</a><a href="pricing.html">料金</a><a href="case-roadtalk.html">導入事例</a><a href="profile.html">所長について</a><a class="nav-cta" href="https://line.me/R/oaMessage/@699xcssc/?%E7%9B%B8%E8%AB%87%E3%81%97%E3%81%9F%E3%81%84%E3%81%A7%E3%81%99" target="_blank" rel="noopener">LINEで相談</a>
 </nav>
 </div></header>
 <div class="hero-art">
 <img src="assets/logo.jpg" width="1600" height="900" alt="SpaceFamilyCompany のロゴ。星雲を背景に、水色と桃色の菱形が輝いている">
 <p class="hero-copy">どこにいても<br>つくれる。<br>きっと、だれかの役に立つ。</p>
-<div class="photo hero-photo" role="img" aria-label="海辺のN-VANと白猫トムの写真（準備中）"><span>海辺のN-VANと白猫トム</span><span class="photo-label">写真準備中</span></div>
+<div class="photo hero-photo has-img"><img src="assets/img/hero-nvan.jpg" width="1400" height="933" alt="夕焼けの海辺に停まった白い軽バンと、そばに座る白猫のイラスト" loading="lazy"><span class="tag-note">イラスト</span></div>
 </div>
 </section>
 
@@ -127,7 +127,7 @@
 <div class="span-4 stack" style="--gap:28px">
 <p class="lead">NPO・自治体・地域団体のための、ひとりの研究所です。個人・個人事業主の方のご相談も受け付けています。人も予算も足りない現場の「これ、どうにかならない？」を聞いて、専用のアプリや仕組みをつくってお届けします。全国どこからでも、オンラインで。</p>
 <div class="btns">
-<a class="btn btn--ink" href="#contact">LINEで相談する</a>
+<a class="btn btn--ink" href="https://line.me/R/oaMessage/@699xcssc/?%E7%9B%B8%E8%AB%87%E3%81%97%E3%81%9F%E3%81%84%E3%81%A7%E3%81%99" target="_blank" rel="noopener">LINEで相談する</a>
 <a class="btn btn--outline" href="#works">発明品を見る</a>
 </div>
 </div>
@@ -158,7 +158,7 @@
 </div>
 <div class="cards">
 <article class="card card--ink s-main">
-<div class="photo" role="img" aria-label="N-VANと白猫トムの写真（準備中）"><span>N-VANと白猫トム</span><span class="photo-label">写真準備中</span></div>
+<div class="photo has-img"><img src="assets/img/lab-nvan.jpg" width="1400" height="933" alt="軽バンのバックドアを開けてノートパソコンで開発する人と、隣で丸くなる白猫のイラスト" loading="lazy"><span class="tag-note">イラスト</span></div>
 <div class="card-body">
 <h3 class="t-h3">日本中を走る、移動する研究所。</h3>
 <p class="body">所長は軽バンのN-VANに白猫のトムを乗せ、宮崎、長崎、大阪、千葉、新潟と拠点を移しながら開発しています。「全国対応」は言葉だけではありません。オンラインで完結しつつ、旅の途中なら直接うかがうこともできます。</p>
@@ -206,7 +206,7 @@
 </div>
 <div class="tags" id="g-tags"></div>
 </div>
-<div class="photo phone" role="img" aria-label="実際の画面（準備中）"><span><span data-g="name"></span>の<br>実際の画面</span><span class="photo-label">画像準備中</span></div>
+<div class="photo phone has-img"><img id="g-shot" src="assets/img/gadget-011.jpg" width="540" height="1141" alt="RoadTalkの画面イメージ"><span class="tag-note">画面イメージ</span></div>
 </article>
 </div>
 <a class="btn btn--outline self-start" href="case-roadtalk.html">導入事例：RoadTalkを読む</a>
@@ -281,7 +281,7 @@
 <div class="stack" style="--gap:18px">
 <h3 class="t-h3">LINEで相談する</h3>
 <p class="body" style="color:var(--on-ink)">友だち追加して、困りごとを一言送るだけ。写真やスクリーンショットもそのまま送れます。</p>
-<a class="btn btn--pink self-start" href="https://line.me/R/ti/p/@699xcssc" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>友だち追加する</a>
+<a class="btn btn--pink self-start" href="https://line.me/R/oaMessage/@699xcssc/?%E7%9B%B8%E8%AB%87%E3%81%97%E3%81%9F%E3%81%84%E3%81%A7%E3%81%99" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>友だち追加する</a>
 </div>
 <figure class="qr"><img src="assets/line-qr.svg" width="126" height="126" alt="LINE公式アカウント「スペファミ」の友だち追加QRコード"><figcaption>ID @699xcssc</figcaption></figure>
 </div>
@@ -349,6 +349,8 @@
       shelf.appendChild(b);
     });
     var s = list.filter(function (x) { return x.id === picked; })[0] || list[0];
+    var shot = document.getElementById('g-shot');
+    if (shot) { shot.src = 'assets/img/gadget-' + s.id + '.jpg'; shot.alt = s.name + 'の画面イメージ'; }
     field('no', s.id + '号機'); field('name', s.name); field('status', s.status); field('desc', s.desc); field('use', s.use);
     document.querySelectorAll('[data-g-pill]').forEach(function (el) { el.style.background = s.pill; });
     var tags = document.getElementById('g-tags');
