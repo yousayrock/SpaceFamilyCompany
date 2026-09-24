@@ -1,0 +1,13 @@
+{
+  "size": { "width": 2500, "height": 1686 },
+  "selected": true,
+  "name": "main-2026-09",
+  "chatBarText": "メニュー",
+  "areas": [
+    { "bounds": { "x": 0, "y": 0, "width": 1000, "height": 1686 }, "action": { "type": "message", "label": "LINEで相談する", "text": "相談したいです" } },
+    { "bounds": { "x": 1000, "y": 0, "width": 750, "height": 843 }, "action": { "type": "uri", "label": "料金", "uri": "https://yousayrock.github.io/SpaceFamilyCompany/pricing.html" } },
+    { "bounds": { "x": 1750, "y": 0, "width": 750, "height": 843 }, "action": { "type": "uri", "label": "発明品", "uri": "https://yousayrock.github.io/SpaceFamilyCompany/index.html#works" } },
+    { "bounds": { "x": 1000, "y": 843, "width": 750, "height": 843 }, "action": { "type": "uri", "label": "導入事例", "uri": "https://yousayrock.github.io/SpaceFamilyCompany/case-roadtalk.html" } },
+    { "bounds": { "x": 1750, "y": 843, "width": 750, "height": 843 }, "action": { "type": "uri", "label": "所長紹介", "uri": "https://yousayrock.github.io/SpaceFamilyCompany/profile.html" } }
+  ]
+}

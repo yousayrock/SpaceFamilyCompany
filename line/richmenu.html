@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>LINEリッチメニュー（2500×1686）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&amp;family=M+PLUS+1:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+/* LINEリッチメニューの画像の元データ。puppeteerで2500×1686のJPEGに書き出す。
+   タップ領域は line/richmenu.json の areas と一致させること。 */
+:root{--ink:#232046;--ink-deep:#1C1A33;--panel:#2C2858;--line:#4A4480;--paper:#F7F5FB;--cyan:#A9DDE2;--pink:#F0A9B9;--muted:#C9C4E6}
+*{box-sizing:border-box;margin:0}
+html,body{width:2500px;height:1686px;overflow:hidden;background:var(--ink)}
+body{font-family:'M PLUS 1',sans-serif;color:var(--paper)}
+.menu{display:grid;grid-template-columns:1000px 750px 750px;grid-template-rows:843px 843px;width:2500px;height:1686px}
+
+/* 左：相談（主役） */
+.consult{grid-row:1/3;background:var(--pink);color:var(--ink-deep);position:relative;overflow:hidden;padding:120px 96px 110px;display:flex;flex-direction:column;justify-content:space-between}
+.consult::after{content:"";position:absolute;right:-150px;bottom:-120px;width:520px;height:720px;opacity:.28;
+  background:conic-gradient(from 0deg at 50% 50%,var(--paper) 0 90deg,var(--cyan) 90deg 180deg,var(--paper) 180deg 270deg,var(--cyan) 270deg 360deg);
+  clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.consult .eyebrow{font-size:56px;font-weight:700;letter-spacing:.08em;color:#6B2E3E}
+.consult h1{font-family:'Noto Serif JP',serif;font-weight:900;font-size:170px;line-height:1.28;letter-spacing:.02em}
+.consult p{white-space:nowrap;font-size:64px;font-weight:700;line-height:1.55;position:relative;z-index:1}
+.chip{display:inline-flex;align-items:center;gap:26px;background:var(--ink);color:var(--paper);border-radius:999px;padding:30px 60px;font-size:62px;font-weight:700;align-self:flex-start;position:relative;z-index:1}
+
+/* 右：4マス */
+.tile{position:relative;padding:92px 80px 80px;display:flex;flex-direction:column;justify-content:space-between;border-left:4px solid var(--line)}
+.tile:nth-child(2),.tile:nth-child(3){border-bottom:4px solid var(--line)}
+.tile:nth-child(2),.tile:nth-child(5){background:var(--ink)}
+.tile:nth-child(3),.tile:nth-child(4){background:var(--panel)}
+.tile svg{width:190px;height:190px}
+.tile b{display:block;font-family:'Noto Serif JP',serif;font-weight:900;font-size:132px;line-height:1.2;white-space:nowrap}
+.tile small{display:block;font-size:54px;color:var(--muted);margin-top:22px;font-weight:500;white-space:nowrap}
+.arrow{position:absolute;right:76px;top:96px;width:84px;height:84px;border-radius:50%;border:5px solid var(--line);display:flex;align-items:center;justify-content:center}
+.arrow svg{width:40px;height:40px}
+</style>
+</head>
+<body>
+<div class="menu">
+
+<div class="consult">
+<span class="eyebrow">未来ガジェット研究所</span>
+<div>
+<h1>LINEで<br>相談する</h1>
+</div>
+<p>困りごとを一言どうぞ。<br>相談・見積もりは無料。</p>
+<span class="chip"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>ここを押して送信</span>
+</div>
+
+<div class="tile">
+<svg viewBox="0 0 48 48" fill="none" stroke="#A9DDE2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="19"/><path d="M16 13l8 11 8-11M24 24v12M17 26h14M17 31h14"/></svg>
+<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#F7F5FB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+<div><b>料金</b><small>サービスと目安の金額</small></div>
+</div>
+
+<div class="tile">
+<svg viewBox="0 0 48 48"><polygon points="24,3 8,24 24,24" fill="#A9DDE2"/><polygon points="24,3 40,24 24,24" fill="#F0A9B9"/><polygon points="8,24 24,45 24,24" fill="#F0A9B9"/><polygon points="40,24 24,45 24,24" fill="#A9DDE2"/></svg>
+<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#F7F5FB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+<div><b>発明品</b><small>これまでつくった道具</small></div>
+</div>
+
+<div class="tile">
+<svg viewBox="0 0 48 48" fill="none" stroke="#F0A9B9" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h24v20H4zM28 19h8l7 7v6H28z"/><circle cx="12" cy="35" r="4"/><circle cx="35" cy="35" r="4"/></svg>
+<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#F7F5FB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+<div><b>導入事例</b><small>運送会社のRoadTalk</small></div>
+</div>
+
+<div class="tile">
+<svg viewBox="0 0 48 48" fill="none" stroke="#A9DDE2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="8"/><path d="M8 43c1.5-9 8-14 16-14s14.5 5 16 14"/></svg>
+<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#F7F5FB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+<div><b>所長紹介</b><small>白猫トムと旅する研究所</small></div>
+</div>
+
+</div>
+</body>
+</html>
