@@ -226,6 +226,8 @@ p{margin:0}
 .foot-nav{display:flex;flex-wrap:wrap;gap:8px 24px}
 .foot-nav a{color:var(--on-ink-muted);text-decoration:none}
 .foot-nav a:hover{color:var(--paper);text-decoration:underline}
+.foot-tel{color:var(--on-ink-muted);text-decoration:none;font-variant-numeric:tabular-nums}
+.foot-tel:hover{color:var(--paper);text-decoration:underline}
 .social{display:flex;gap:10px}
 .social a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;border:1px solid var(--ink-line);color:var(--paper)}
 .social a:hover{background:var(--ink-panel);color:var(--paper)}
@@ -410,7 +412,11 @@ p{margin:0}
 .skills{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:minmax(0,1fr);column-gap:40px;border-top:1.5px solid var(--ink)}
 .skills li{padding:16px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.7;color:var(--ink)}
 @media (min-width:720px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.motto{padding:clamp(32px,4.5vw,64px);gap:16px}
+.motto{padding:0;gap:0;overflow:hidden}
+.motto .photo{border-radius:0;min-height:clamp(220px,40vw,320px)}
+.motto .photo img{object-position:75% 50%}
+.motto-body{padding:clamp(32px,4.5vw,64px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+@media (min-width:860px){.motto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.motto .photo{min-height:100%}}
 .motto .eyebrow{color:var(--on-ink-muted);font-weight:400;letter-spacing:0;font-size:15px}
 .motto-line{font-family:var(--serif);font-weight:900;font-size:clamp(32px,3.4vw,48px);line-height:1.4}
 .cta-band .body{font-size:16px}
