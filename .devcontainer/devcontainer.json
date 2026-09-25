@@ -1,0 +1,18 @@
+{
+  "name": "SpaceFamilyCompany",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+  },
+  "postAttachCommand": "npx --yes http-server -p 8080 -c-1 --silent",
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": { "label": "サイトのプレビュー", "onAutoForward": "openPreview" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["anthropic.claude-code"]
+    }
+  }
+}
