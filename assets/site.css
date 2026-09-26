@@ -424,6 +424,7 @@ p{margin:0}
 
 /* ---------- 研究員募集 ---------- */
 .recruit-hero .t-display{color:var(--paper)}
+@media (min-width:960px){.hero-title{font-size:clamp(40px,5.4vw,80px)}.nw-lg{white-space:nowrap}}
 .recruit-hero .hand{font-family:var(--hand);font-weight:600;font-size:clamp(20px,2vw,26px);color:var(--pink);transform:rotate(-4deg);transform-origin:left;display:inline-block}
 .recruit-hero .lead{color:var(--on-ink)}
 .who-list{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
