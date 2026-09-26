@@ -595,37 +595,26 @@ $$("#tabs button").forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
 
 /* ── 画像書き出し ── */
 function loadScript(src){return new Promise((ok,ng)=>{const s=document.createElement("script");s.src=src;s.onload=ok;s.onerror=ng;document.head.append(s)})}
-/* html2canvas は object-fit と mix-blend-mode に非対応なので、ロゴだけ事前に枠サイズへ合成しておく（差し替えたロゴは白を透明に） */
-async function logoForExport(scale,multiply){
- const el=$("#logo"), w=Math.round(el.offsetWidth*scale), h=Math.round(el.offsetHeight*scale);
- const img=await loadImg(el.currentSrc||el.src);
- const c=document.createElement("canvas");c.width=w;c.height=h;
- const x=c.getContext("2d"), k=Math.min(w/img.naturalWidth,h/img.naturalHeight);
- const dw=img.naturalWidth*k, dh=img.naturalHeight*k;
- x.drawImage(img,(w-dw)/2,(h-dh)/2,dw,dh);
- if(multiply)try{
-  const d=x.getImageData(0,0,w,h), p=d.data;
-  for(let i=0;i<p.length;i+=4){ /* 白→透明（乗算の近似） */
-   const a=Math.max(255-p[i],255-p[i+1],255-p[i+2])/255;
-   if(a===0){p[i+3]=0;continue}
-   p[i]=255-(255-p[i])/a;p[i+1]=255-(255-p[i+1])/a;p[i+2]=255-(255-p[i+2])/a;p[i+3]*=a;
-  }
-  x.putImageData(d,0,0);
- }catch{}
- return c.toDataURL("image/png");
-}
-async function bgForExport(scale){
- const el=$("#bg"), w=Math.round(el.offsetWidth*scale), h=Math.round(el.offsetHeight*scale);
- const img=await loadImg(el.currentSrc||el.src);
- const c=document.createElement("canvas");c.width=w;c.height=h;
+/* 背景とロゴは自前でキャンバスに描き、その上に html2canvas で描いた文字・QRを重ねる。
+   iPhone の Safari では html2canvas 内で差し替えた画像が読み込み前に描かれて抜けることがあるため */
+function drawBg(x,w,h,img){
  const k=Math.max(w/img.naturalWidth,h/img.naturalHeight), dw=img.naturalWidth*k, dh=img.naturalHeight*k;
- const x=c.getContext("2d");x.drawImage(img,(w-dw)/2,(h-dh)/2,dw,dh);
- if(state.bg){ /* 画面の .bgfade と同じぼかしを焼き込む */
+ x.drawImage(img,(w-dw)/2,(h-dh)/2,dw,dh);
+ if(state.bg){ /* 画面の .bgfade と同じぼかし */
   const g=x.createLinearGradient(0,0,0,h);
   [[0,0],[.38,.2],[.62,.93],[.76,1]].forEach(([o,a])=>g.addColorStop(o,`rgba(255,255,255,${a})`));
   x.fillStyle=g;x.fillRect(0,0,w,h);
  }
- return c.toDataURL("image/jpeg",.92);
+}
+function drawLogo(x,k,img){
+ const el=$("#logo"), cr=card.getBoundingClientRect(), r=el.getBoundingClientRect(), z=cr.width/card.offsetWidth;
+ const bx=(r.left-cr.left)/z*k, by=(r.top-cr.top)/z*k, bw=r.width/z*k, bh=r.height/z*k;
+ const f=Math.min(bw/img.naturalWidth,bh/img.naturalHeight), dw=img.naturalWidth*f, dh=img.naturalHeight*f;
+ x.save();
+ x.globalAlpha=+getComputedStyle(el).opacity||1;
+ if(state.logo)x.globalCompositeOperation="multiply"; /* 差し替えたロゴは画面と同じく乗算で白を消す */
+ x.drawImage(img,bx+(bw-dw)/2,by+(bh-dh)/2,dw,dh);
+ x.restore();
 }
 let exportURL="", exportFile=null;
 $("#exportBtn").onclick=async()=>{
@@ -633,19 +622,25 @@ $("#exportBtn").onclick=async()=>{
  try{
   if(!window.html2canvas)await loadScript("vendor/html2canvas.min.js");
   select(null);
-  const SCALE=4, logoSrc=await logoForExport(SCALE,!!state.logo), bgSrc=await bgForExport(SCALE);
-  const canvas=await html2canvas(card,{scale:SCALE,backgroundColor:"#ffffff",logging:false,useCORS:true,scrollX:0,scrollY:0,
+  const SCALE=4, OWN=["bg","bgfade","logo","guide"];
+  const [bgImg,logoImg]=await Promise.all([loadImg($("#bg").currentSrc||$("#bg").src),loadImg($("#logo").currentSrc||$("#logo").src)]);
+  const layer=await html2canvas(card,{scale:SCALE,backgroundColor:null,logging:false,useCORS:true,scrollX:0,scrollY:0,
+   ignoreElements:el=>OWN.includes(el.id),
    onclone(doc){
     const c=doc.getElementById("card");
     doc.body.replaceChildren(c);
-    doc.body.style.cssText="margin:0;padding:0;background:#fff;overflow:visible;min-height:0";
-    doc.documentElement.style.background="#fff";
-    c.style.boxShadow="none";
-    doc.getElementById("guide")?.remove();
+    doc.body.style.cssText="margin:0;padding:0;background:transparent;overflow:visible;min-height:0";
+    doc.documentElement.style.background="transparent";
+    c.style.boxShadow="none";c.style.background="transparent";
+    OWN.forEach(id=>doc.getElementById(id)?.remove());
     c.querySelectorAll(".handle").forEach(h=>h.remove());
-    const lg=doc.getElementById("logo");lg.src=logoSrc;lg.style.mixBlendMode="normal";lg.style.objectFit="fill";
-    const bg=doc.getElementById("bg");bg.src=bgSrc;bg.style.objectFit="fill";doc.getElementById("bgfade")?.remove();
    }});
+  const canvas=document.createElement("canvas");canvas.width=layer.width;canvas.height=layer.height;
+  const x=canvas.getContext("2d"), k=layer.width/card.offsetWidth;
+  x.fillStyle="#fff";x.fillRect(0,0,canvas.width,canvas.height);
+  drawBg(x,canvas.width,canvas.height,bgImg);
+  drawLogo(x,k,logoImg);
+  x.drawImage(layer,0,0);
   const blob=await new Promise(r=>canvas.toBlob(r,"image/png"));
   if(exportURL)URL.revokeObjectURL(exportURL);
   exportURL=URL.createObjectURL(blob);
