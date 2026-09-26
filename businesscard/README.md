@@ -18,9 +18,17 @@
 - `index.html` — エディタ本体
 - `vendor/qrcode.js` — QR生成（qrcode-generator 2.0.4, MIT）。外部サイトに頼らずQRを作れる。
 - `vendor/html2canvas.min.js` — PNG書き出し（html2canvas 1.4.1, MIT）。「画像で保存」を押したときだけ読み込む。
-- `assets/logo/` — SpaceFamilyCompany の正本ロゴ一式（logo-horizontal-v1～3: 横型、logo-icon-v1～2: アイコン型）
-- `assets/reference/` — 名刺デザインの参考画像（`approved_businesscard_reference.jpeg` をガイドに使用）
-- `assets/design-history/` — デザイン検討用の過去案
+- `assets/logo/` — SpaceFamilyCompany の正本ロゴ一式（すべて 2048×500 または 1536×375、白背景）
+  - `logo_white_symbol.png` — 菱形のみ
+  - `logo_white_symbol_wordmark.png` — 菱形＋社名
+  - `logo_white_wordmark.png` — 社名のみ
+  - `logo_space_background_symbol.jpeg` / `logo_space_background_wordmark.jpeg` — 星雲背景つき
+- `assets/final-design/businesscard_latest.png` — 最新の完成デザイン（MASTER v4）。エディタの初期配置はこれに合わせている
+- `assets/card/` — エディタが使うパーツ（上の2つから作ったもの）
+  - `diamond.png` — `logo_white_symbol.png` から菱形だけを透過で切り抜いたもの（初期ロゴ）
+  - `background.jpg` — 完成デザインから文字・QR・菱形を消した背景（1820×1100px、91×55mm）
+  - `guide.jpg` — 完成デザインを名刺の範囲で切り出したもの。「ガイド」で重ねて位置合わせに使う
+- `assets/design-history/` — 過去のデザイン案（`v3_` は旧キャッチコピー「発明・開発で片付ける。」の版）
 
 ## ブランド方向
 - 水色 × ピンク

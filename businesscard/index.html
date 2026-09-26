@@ -53,29 +53,37 @@ button:disabled{opacity:.4;cursor:default}
 .selected>.handle{display:block;position:absolute;width:3.2mm;height:3.2mm;right:-2mm;bottom:-2mm;background:#fff;border:.5mm solid #5578ff;border-radius:50%;cursor:nwse-resize;z-index:2}
 .selected>.handle::after{content:"";position:absolute;inset:-3.5mm}
 .guide{position:absolute;inset:0;z-index:100;pointer-events:none;opacity:0;
- background:url("assets/reference/a_clean_modern_pastel_sci_fi_themed_business_card.png") 50.88% 51.52%/108.02% 123.97% no-repeat}
-.sky{left:0;top:0;width:91mm;height:25mm;opacity:.8;
- background:radial-gradient(circle at 50% 85%,#fff 0%,#fff 14%,rgba(255,255,255,0) 42%),
-  radial-gradient(circle at 17% 15%,rgba(141,221,242,.67),rgba(141,221,242,0) 35%),
-  radial-gradient(circle at 83% 12%,rgba(246,162,198,.67),rgba(246,162,198,0) 36%),
-  linear-gradient(100deg,#bcecf8,#f8e7f4 50%,#d8c6f2)}
-.sky.custom{opacity:1}
-.orbit{left:-7mm;top:1mm;width:105mm;height:30mm;border:.22mm solid rgba(255,255,255,.6);border-radius:50%;transform:rotate(-4deg);pointer-events:none}
-.logo{object-fit:contain;left:37mm;top:1.7mm;width:17mm;height:12mm;mix-blend-mode:multiply;-webkit-user-drag:none}
-.company{left:18mm;top:12mm;width:55mm;text-align:center;font-family:var(--serif);font-size:5.2mm;color:var(--ink);white-space:nowrap}
-.lab{left:29mm;top:18.2mm;width:34mm;text-align:center;font-family:var(--mincho);font-size:2.5mm;font-weight:700;white-space:nowrap}
-.tagline{left:22mm;top:22.3mm;width:47mm;text-align:center;font-family:var(--mincho);font-size:2.15mm;white-space:nowrap}
-.line{left:22mm;top:26.2mm;width:47mm;height:.35mm;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink))}
-.name{left:7mm;top:30.2mm;width:37mm;font-family:var(--mincho);font-size:3.5mm;font-weight:700;white-space:nowrap}
-.name .en{font:400 1.8mm "Helvetica Neue",Helvetica,Arial,sans-serif}
-.role{left:7mm;top:35mm;width:25mm;font-family:var(--mincho);font-size:2.05mm}
-.mission{left:7mm;top:41mm;width:36mm;border-left:.45mm solid var(--cyan);padding-left:2mm;font-family:var(--mincho);font-size:1.9mm;line-height:1.55}
-.qrunit{width:18mm;text-align:center;font-size:1.5mm;font-weight:600}
-.mailqr{left:50mm;top:31mm}.webqr{left:69mm;top:31mm}
-.qr{width:83.34%;aspect-ratio:1/1;margin:0 auto;background:#fff}
+ background:url("assets/card/guide.jpg") 0 0/100% 100% no-repeat}
+.bg{left:0;top:0;width:91mm;height:55mm;pointer-events:none;object-fit:cover;-webkit-user-drag:none}
+.bgfade{left:0;top:0;width:91mm;height:55mm;pointer-events:none;display:none;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.2) 38%,rgba(255,255,255,.93) 62%,#fff 76%)}
+.bgfade.on{display:block}
+.logo{left:40.5mm;top:.55mm;width:10mm;height:14.3mm;object-fit:contain;-webkit-user-drag:none}
+.logo.custom{mix-blend-mode:multiply}
+.tagline{left:8.9mm;top:15.6mm;width:75mm;text-align:center;font-family:var(--mincho);font-size:2.95mm;line-height:1.25;letter-spacing:-.01em;white-space:nowrap}
+.divider{left:19.3mm;top:20.1mm;width:52.5mm;height:1.6mm}
+.divider svg,.rule svg{display:block;width:100%;height:100%;overflow:visible}
+.company{left:6.1mm;top:20.6mm;width:80mm;text-align:center;font-family:var(--serif);font-size:6.95mm;line-height:1.15;letter-spacing:-.022em;color:#0d0f32;white-space:nowrap}
+.lab{left:20mm;top:28.2mm;width:51mm;text-align:center;font-family:var(--mincho);font-size:2.55mm;line-height:1.2;letter-spacing:.02em;color:#232848;white-space:nowrap}
+.name{left:5.4mm;top:34.05mm;width:40mm;font-family:var(--mincho);font-size:3.2mm;line-height:1.2;font-weight:700;letter-spacing:.15em;color:#1c1f38;white-space:nowrap}
+.name .sep{font-weight:400;margin:0 .75em 0 .35em;color:#454d6b}
+.name .en{font:400 1.55mm/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.14em;color:#454d6b;vertical-align:.3mm}
+.role{left:5.6mm;top:38.9mm;width:25mm;font-family:var(--mincho);font-size:1.9mm;line-height:1.3;letter-spacing:.19em;color:#454d6b;white-space:nowrap}
+.rule{left:5.6mm;top:43.3mm;width:34.4mm;height:.8mm}
+.mission{left:5.6mm;top:45.45mm;width:31mm;padding-left:2.15mm;font-family:var(--mincho);font-size:1.8mm;line-height:1.72;letter-spacing:.03em;color:#454d6b;white-space:nowrap}
+.mission::before{content:"";position:absolute;left:0;top:0;bottom:0;width:.3mm;background:linear-gradient(#10aefd,#7a80f5 45%,#f85bb6 80%,#fbadd6)}
+.qrunit{font-size:1.45mm;color:#454d6b}
+.mailqr{left:47.05mm;top:34mm;width:19.5mm;text-align:center}
+.webqr{left:70.1mm;top:34mm;width:20.4mm;text-align:left}
+.qr{aspect-ratio:1/1;background:#fff}
+.mailqr .qr{width:61%;margin:0 auto}
+.webqr .qr{width:59.3%;margin:0 0 0 4.9%}
 .qr svg{display:block;width:100%;height:100%}
-.qrlab{margin-top:.8mm;white-space:nowrap}
-.email{font-size:.9mm;font-weight:400;margin-top:.45mm;white-space:nowrap}
+.qrlab{display:flex;align-items:center;gap:.7mm;margin-top:1mm;white-space:nowrap;letter-spacing:.04em;line-height:1.3}
+.mailqr .qrlab{justify-content:center}
+.qrlab svg{flex:none;width:2.1mm;height:2.1mm}
+.email,.url{font-size:1.1mm;line-height:1.36;letter-spacing:.06em;margin-top:.55mm;white-space:nowrap;color:#56627f}
+.email{margin-top:.9mm}
+.vline{left:67mm;top:34.2mm;width:.15mm;height:11.5mm;background:#e2e2ec}
 
 /* ── タブ（スマホ） ── */
 .tabs{position:sticky;top:calc(var(--hh) + var(--sh));z-index:30;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;
@@ -188,18 +196,20 @@ dialog h2{font-size:16px;margin:0 0 12px}
   <div class="sizer" id="sizer">
    <div class="zoomwrap" id="zoomwrap">
     <div class="card" id="card">
-     <div class="el sky" id="sky"></div>
-     <div class="el orbit"></div>
-     <img class="el logo editable" data-id="logo" data-name="ロゴ" id="logo" src="assets/logo/logo-horizontal-v3.png" alt="" draggable="false">
+     <img class="el bg" id="bg" src="assets/card/background.jpg" alt="" draggable="false">
+     <div class="el bgfade" id="bgfade"></div>
+     <img class="el logo editable" data-id="logo" data-name="ロゴ" id="logo" src="assets/card/diamond.png" alt="" draggable="false">
+     <div class="el tagline editable" data-id="tagline" data-name="キャッチコピー"></div>
+     <div class="el divider editable" data-id="divider" data-name="飾り線（上）"><svg viewBox="0 0 1050 32" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="dvL" x1="0" x2="1"><stop offset="0" stop-color="#bfe6fb" stop-opacity=".55"/><stop offset=".5" stop-color="#a6c6fc"/><stop offset="1" stop-color="#e495e5"/></linearGradient><linearGradient id="dvR" x1="0" x2="1"><stop offset="0" stop-color="#f1a1df"/><stop offset=".6" stop-color="#fcafd6"/><stop offset="1" stop-color="#fcd2e6" stop-opacity=".55"/></linearGradient><linearGradient id="dvS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d98ef0"/><stop offset="1" stop-color="#f7a0d3"/></linearGradient></defs><rect x="0" y="14.8" width="440" height="2.4" fill="url(#dvL)"/><rect x="610" y="14.8" width="440" height="2.4" fill="url(#dvR)"/><path d="M455 11l5 5-5 5-5-5z M595 11l5 5-5 5-5-5z" fill="#e3a0e6"/><path d="M525 0Q527 14 540 16Q527 18 525 32Q523 18 510 16Q523 14 525 0z" fill="url(#dvS)"/></svg></div>
      <div class="el company editable" data-id="company" data-name="社名"></div>
      <div class="el lab editable" data-id="lab" data-name="研究所名"></div>
-     <div class="el tagline editable" data-id="tagline" data-name="キャッチコピー"></div>
-     <div class="el line editable" data-id="line" data-name="ライン"></div>
      <div class="el name editable" data-id="name" data-name="氏名"></div>
      <div class="el role editable" data-id="role" data-name="肩書き"></div>
+     <div class="el rule editable" data-id="rule" data-name="飾り線（下）"><svg viewBox="0 0 688 16" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="ruL" x1="0" x2="1"><stop offset="0" stop-color="#5fcff5"/><stop offset=".4" stop-color="#c490e6"/><stop offset=".75" stop-color="#f59ad0"/><stop offset="1" stop-color="#fbd3e8"/></linearGradient></defs><rect x="0" y="6.8" width="650" height="2.4" fill="url(#ruL)"/><path d="M675 1l7 7-7 7-7-7z" fill="#dc5cca"/></svg></div>
      <div class="el mission editable" data-id="mission" data-name="説明"></div>
-     <div class="el qrunit mailqr editable" data-id="mailqr" data-name="メールQR"><div class="qr" id="mailQR"></div><div class="qrlab">✉ メールで連絡</div><div class="email" id="emailText"></div></div>
-     <div class="el qrunit webqr editable" data-id="webqr" data-name="Web QR"><div class="qr" id="webQR"></div><div class="qrlab">◎ ホームページを見る</div></div>
+     <div class="el qrunit mailqr editable" data-id="mailqr" data-name="メールQR"><div class="qr" id="mailQR"></div><div class="qrlab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M3 6l9 7.2L21 6M3 18.4l6.6-6.3M21 18.4l-6.6-6.3"/></svg><span>メールで連絡</span></div><div class="email" id="emailText"></div></div>
+     <div class="el vline editable" data-id="vline" data-name="区切り線"></div>
+     <div class="el qrunit webqr editable" data-id="webqr" data-name="Web QR"><div class="qr" id="webQR"></div><div class="qrlab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><ellipse cx="12" cy="12" rx="4.2" ry="9.5"/><path d="M2.5 12h19M4.2 7h15.6M4.2 17h15.6"/></svg><span>ホームページを見る</span></div><div class="url" id="urlText"></div></div>
      <div class="guide" id="guide"></div>
     </div>
    </div>
@@ -238,12 +248,12 @@ dialog h2{font-size:16px;margin:0 0 12px}
      <label class="btn">画像を選ぶ<input id="logoFile" type="file" accept="image/*"></label>
      <button class="btn ghost" id="logoResetBtn" type="button">元のロゴに戻す</button>
     </div>
-    <h3>背景（上部）</h3>
+    <h3>背景</h3>
     <div class="row">
      <label class="btn">画像を選ぶ<input id="bgFile" type="file" accept="image/*"></label>
      <button class="btn ghost" id="bgResetBtn" type="button">元の背景に戻す</button>
     </div>
-    <p class="hint">iPhoneでは写真ライブラリ・カメラ・ファイルから選べます。大きい写真は自動で縮小して保存します。</p>
+    <p class="hint">iPhoneでは写真ライブラリ・カメラ・ファイルから選べます。大きい写真は自動で縮小して保存します。背景の写真は、文字が読めるよう下半分を白くぼかします。</p>
     <h3>完成イメージのガイド</h3>
     <button class="btn" id="guideBtn2" type="button" aria-pressed="false">ガイドを表示</button>
     <div class="field" style="margin-top:12px"><label for="guideRange">ガイドの濃さ <output id="guideOut"></output></label><input id="guideRange" type="range" min="10" max="90" step="1"></div>
@@ -279,7 +289,7 @@ dialog h2{font-size:16px;margin:0 0 12px}
     <h2>保存・印刷</h2>
     <div class="stack">
      <button class="btn primary" id="exportBtn" type="button">画像（PNG）で保存</button>
-     <p class="hint">約380dpi（1376×831px）の画像を作ります。iPhoneでは表示された画像を<b>長押し →「"写真"に保存」</b>、または「共有・保存」ボタンから保存できます。</p>
+     <p class="hint">約380dpi（1376×832px）の画像を作ります。iPhoneでは表示された画像を<b>長押し →「"写真"に保存」</b>、または「共有・保存」ボタンから保存できます。</p>
      <button class="btn" id="printBtn" type="button">印刷 / PDF</button>
      <p class="hint">iPhoneでは印刷画面のプレビューを<b>2本指で広げるとPDF</b>になり、共有から「ファイル」に保存できます。</p>
      <p class="hint">入力した文字・配置・差し替えた画像は、この端末のブラウザに自動保存されます。</p>
@@ -305,14 +315,14 @@ dialog h2{font-size:16px;margin:0 0 12px}
 <script>
 "use strict";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const MM=96/25.4, KEY="sfc-card-v2", TAB_KEY="sfc-card-tab";
+const MM=96/25.4, KEY="sfc-card-v3", TAB_KEY="sfc-card-tab";
 const DEFAULT_TEXT={
  company:"SpaceFamilyCompany",lab:"未来ガジェット研究所",tagline:"あなたの困りごと、研究させてください。",
  nameJa:"吉岡 佑正",nameEn:"Yusei Yoshioka",role:"代表 / 開発者",
  mission:"地域・社会・個人の課題を、\n発明・開発で解決する。",
  email:"spacefamilycompany@gmail.com",web:"https://yousayrock.github.io/SpaceFamilyCompany/index.html"
 };
-const DEFAULT_LOGO=$("#logo").getAttribute("src");
+const DEFAULT_LOGO=$("#logo").getAttribute("src"), DEFAULT_BG=$("#bg").getAttribute("src");
 const card=$("#card"), stage=$("#stage"), sizer=$("#sizer"), zoomwrap=$("#zoomwrap");
 const editables=$$(".editable");
 const mqDesk=matchMedia("(min-width:900px)");
@@ -367,26 +377,48 @@ $("#zoomRange").addEventListener("input",e=>{$("#zoomOut").textContent=e.target.
 /* ── 文字 ── */
 function setContent(el,nodes){const h=el.querySelector(":scope>.handle");el.replaceChildren(...nodes);if(h)el.append(h)}
 function byId(id){return card.querySelector(`[data-id="${id}"]`)}
+/* キャッチコピーは1文字ずつ色を変えて、青→紫→ピンクのグラデーションにする（画像保存でも崩れない方法） */
+const TAG_STOPS=[[0,[58,153,220]],[.35,[90,140,208]],[.45,[170,123,203]],[.5,[229,107,174]],[1,[248,108,166]]];
+function tagColor(t){
+ for(let i=1;i<TAG_STOPS.length;i++){
+  const [p1,c1]=TAG_STOPS[i-1],[p2,c2]=TAG_STOPS[i];
+  if(t<=p2){const k=(t-p1)/(p2-p1||1);return `rgb(${c1.map((v,j)=>Math.round(v+(c2[j]-v)*k)).join(",")})`}
+ }
+ return `rgb(${TAG_STOPS.at(-1)[1].join(",")})`;
+}
+function splitURL(u){const m=u.match(/^([a-z][a-z0-9+.-]*:\/\/[^/]+\/)(.+)$/i);return m?[m[1],m[2]]:[u]}
+const lines=text=>text.split("\n").flatMap((line,i)=>i?[document.createElement("br"),line]:[line]);
 function renderText(){
  const t=state.text;
- ["company","lab","tagline","role"].forEach(k=>setContent(byId(k),[t[k]]));
+ ["company","lab","role"].forEach(k=>setContent(byId(k),[t[k]]));
+ const chars=Array.from(t.tagline);
+ setContent(byId("tagline"),chars.map((ch,i)=>{const sp=document.createElement("span");sp.textContent=ch;sp.style.color=tagColor(chars.length>1?i/(chars.length-1):0);return sp}));
  const n=[t.nameJa];
- if(t.nameEn.trim()){const en=document.createElement("span");en.className="en";en.textContent=t.nameEn;n.push(" ｜ ",en)}
+ if(t.nameEn.trim()){
+  const sep=document.createElement("span");sep.className="sep";sep.textContent="|";
+  const en=document.createElement("span");en.className="en";en.textContent=t.nameEn;n.push(sep,en);
+ }
  setContent(byId("name"),n);
- setContent(byId("mission"),t.mission.split("\n").flatMap((line,i)=>i?[document.createElement("br"),line]:[line]));
+ setContent(byId("mission"),lines(t.mission));
  $("#emailText").textContent=t.email;
+ $("#urlText").replaceChildren(...lines(splitURL(t.web.trim()).join("\n")));
 }
 qrcode.stringToBytes=qrcode.stringToBytesFuncs["UTF-8"];
-function qrSVG(text,color){
+/* 角を丸めたドットと、角の四角（位置決め模様）を丸角で描く */
+function qrSVG(text,stops,id){
  const q=qrcode(0,"H");q.addData(text,"Byte");q.make();
- const n=q.getModuleCount();let d="";
- for(let r=0;r<n;r++)for(let c=0;c<n;c++)if(q.isDark(r,c))d+=`M${c} ${r}h1v1h-1z`;
- return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges" aria-hidden="true"><rect width="${n}" height="${n}" fill="#fff"/><path d="${d}" fill="${color}"/></svg>`;
+ const n=q.getModuleCount(), inFinder=(r,c)=>(r<7&&c<7)||(r<7&&c>=n-7)||(r>=n-7&&c<7);
+ let d="";
+ for(let r=0;r<n;r++)for(let c=0;c<n;c++)if(q.isDark(r,c)&&!inFinder(r,c))d+=`M${c+.04} ${r+.5}a.46 .46 0 1 0 .92 0a.46 .46 0 1 0-.92 0z`;
+ const finder=(x,y)=>`<rect x="${x+.5}" y="${y+.5}" width="6" height="6" rx="1.6" fill="none" stroke="url(#${id})" stroke-width="1"/><rect x="${x+2}" y="${y+2}" width="3" height="3" rx=".8" fill="url(#${id})"/>`;
+ const grad=stops.map(([o,c])=>`<stop offset="${o}" stop-color="${c}"/>`).join("");
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 ${n+2} ${n+2}" aria-hidden="true"><defs><linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="${n}" y2="${n*.35}">${grad}</linearGradient></defs><rect x="-1" y="-1" width="${n+2}" height="${n+2}" fill="#fff"/><path d="${d}" fill="url(#${id})"/>${finder(0,0)}${finder(n-7,0)}${finder(0,n-7)}</svg>`;
 }
+const MAIL_STOPS=[[0,"#35b5f5"],[.5,"#7fa6ee"],[1,"#b986d8"]], WEB_STOPS=[[0,"#f2729f"],[1,"#f77fae"]];
 function renderQR(){
- const put=(el,text,color)=>{try{el.innerHTML=text?qrSVG(text,color):""}catch{el.innerHTML="";toast("QRにできる文字数を超えています")}};
- put($("#mailQR"),state.text.email.trim()&&"mailto:"+state.text.email.trim(),"#58cce9");
- put($("#webQR"),state.text.web.trim(),"#ed83b7");
+ const put=(el,text,stops,id)=>{try{el.innerHTML=text?qrSVG(text,stops,id):""}catch{el.innerHTML="";toast("QRにできる文字数を超えています")}};
+ put($("#mailQR"),state.text.email.trim()&&"mailto:"+state.text.email.trim(),MAIL_STOPS,"qrMail");
+ put($("#webQR"),state.text.web.trim(),WEB_STOPS,"qrWeb");
 }
 let qrTimer=0;
 $$("[data-bind]").forEach(inp=>{
@@ -526,9 +558,10 @@ async function shrink(file,max,type){
 }
 function applyAssets(){
  $("#logo").src=state.logo||DEFAULT_LOGO;
- const sky=$("#sky");
- sky.style.background=state.bg?`linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.2)),url("${state.bg}") center/cover`:"";
- sky.classList.toggle("custom",!!state.bg);
+ $("#logo").classList.toggle("custom",!!state.logo);
+ /* 差し替えた写真は下へいくほど白く抜いて、下半分の文字を読みやすくする */
+ $("#bg").src=state.bg||DEFAULT_BG;
+ $("#bgfade").classList.toggle("on",!!state.bg);
 }
 $("#logoFile").onchange=async e=>{
  const f=e.target.files?.[0];e.target.value="";if(!f)return;
@@ -562,15 +595,15 @@ $$("#tabs button").forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
 
 /* ── 画像書き出し ── */
 function loadScript(src){return new Promise((ok,ng)=>{const s=document.createElement("script");s.src=src;s.onload=ok;s.onerror=ng;document.head.append(s)})}
-/* html2canvas は object-fit と mix-blend-mode に非対応なので、ロゴだけ事前に枠サイズへ合成しておく */
-async function logoForExport(scale){
+/* html2canvas は object-fit と mix-blend-mode に非対応なので、ロゴだけ事前に枠サイズへ合成しておく（差し替えたロゴは白を透明に） */
+async function logoForExport(scale,multiply){
  const el=$("#logo"), w=Math.round(el.offsetWidth*scale), h=Math.round(el.offsetHeight*scale);
  const img=await loadImg(el.currentSrc||el.src);
  const c=document.createElement("canvas");c.width=w;c.height=h;
  const x=c.getContext("2d"), k=Math.min(w/img.naturalWidth,h/img.naturalHeight);
  const dw=img.naturalWidth*k, dh=img.naturalHeight*k;
  x.drawImage(img,(w-dw)/2,(h-dh)/2,dw,dh);
- try{
+ if(multiply)try{
   const d=x.getImageData(0,0,w,h), p=d.data;
   for(let i=0;i<p.length;i+=4){ /* 白→透明（乗算の近似） */
    const a=Math.max(255-p[i],255-p[i+1],255-p[i+2])/255;
@@ -581,13 +614,26 @@ async function logoForExport(scale){
  }catch{}
  return c.toDataURL("image/png");
 }
+async function bgForExport(scale){
+ const el=$("#bg"), w=Math.round(el.offsetWidth*scale), h=Math.round(el.offsetHeight*scale);
+ const img=await loadImg(el.currentSrc||el.src);
+ const c=document.createElement("canvas");c.width=w;c.height=h;
+ const k=Math.max(w/img.naturalWidth,h/img.naturalHeight), dw=img.naturalWidth*k, dh=img.naturalHeight*k;
+ const x=c.getContext("2d");x.drawImage(img,(w-dw)/2,(h-dh)/2,dw,dh);
+ if(state.bg){ /* 画面の .bgfade と同じぼかしを焼き込む */
+  const g=x.createLinearGradient(0,0,0,h);
+  [[0,0],[.38,.2],[.62,.93],[.76,1]].forEach(([o,a])=>g.addColorStop(o,`rgba(255,255,255,${a})`));
+  x.fillStyle=g;x.fillRect(0,0,w,h);
+ }
+ return c.toDataURL("image/jpeg",.92);
+}
 let exportURL="", exportFile=null;
 $("#exportBtn").onclick=async()=>{
  const btn=$("#exportBtn");btn.disabled=true;btn.textContent="画像を作っています…";
  try{
   if(!window.html2canvas)await loadScript("vendor/html2canvas.min.js");
   select(null);
-  const SCALE=4, logoSrc=await logoForExport(SCALE);
+  const SCALE=4, logoSrc=await logoForExport(SCALE,!!state.logo), bgSrc=await bgForExport(SCALE);
   const canvas=await html2canvas(card,{scale:SCALE,backgroundColor:"#ffffff",logging:false,useCORS:true,scrollX:0,scrollY:0,
    onclone(doc){
     const c=doc.getElementById("card");
@@ -598,6 +644,7 @@ $("#exportBtn").onclick=async()=>{
     doc.getElementById("guide")?.remove();
     c.querySelectorAll(".handle").forEach(h=>h.remove());
     const lg=doc.getElementById("logo");lg.src=logoSrc;lg.style.mixBlendMode="normal";lg.style.objectFit="fill";
+    const bg=doc.getElementById("bg");bg.src=bgSrc;bg.style.objectFit="fill";doc.getElementById("bgfade")?.remove();
    }});
   const blob=await new Promise(r=>canvas.toBlob(r,"image/png"));
   if(exportURL)URL.revokeObjectURL(exportURL);
