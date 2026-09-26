@@ -18,7 +18,7 @@
 - `index.html` — エディタ本体
 - `vendor/qrcode.js` — QR生成（qrcode-generator 2.0.4, MIT）。外部サイトに頼らずQRを作れる。
 - `vendor/html2canvas.min.js` — PNG書き出し（html2canvas 1.4.1, MIT）。「画像で保存」を押したときだけ読み込む。
-- `assets/logo/` — SpaceFamilyCompany の正本ロゴ一式
+- `assets/logo/` — SpaceFamilyCompany の正本ロゴ一式（logo-horizontal-v1～3: 横型、logo-icon-v1～2: アイコン型）
 - `assets/reference/` — 名刺デザインの参考画像（`approved_businesscard_reference.jpeg` をガイドに使用）
 - `assets/design-history/` — デザイン検討用の過去案
 
